@@ -280,6 +280,59 @@ header{
   .player-shell{backdrop-filter:blur(20px) saturate(122%)!important;-webkit-backdrop-filter:blur(20px) saturate(122%)!important}
 }
 
+
+/* SUBTLE ATMOSPHERIC BACKGROUNDS — keep visual noise low */
+.section.atmo-section{position:relative;overflow:hidden}
+.section.atmo-section::before{
+  content:"";
+  position:absolute;
+  inset:-5%;
+  z-index:0;
+  pointer-events:none;
+  background-size:cover;
+  background-position:center;
+  filter:blur(20px) saturate(.9) contrast(.95);
+  transform:scale(1.08);
+  opacity:.11;
+}
+.section.atmo-section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(2,3,5,.74),rgba(2,3,5,.82)),
+    radial-gradient(circle at 16% 28%,rgba(239,189,98,.045),transparent 34%),
+    radial-gradient(circle at 84% 70%,rgba(111,168,255,.04),transparent 34%);
+}
+.section.atmo-section>.wrap{position:relative;z-index:1}
+#salon.atmo-section::before{
+  background-image:
+    radial-gradient(circle at 70% 32%,rgba(205,142,85,.17),transparent 36%),
+    radial-gradient(circle at 58% 62%,rgba(126,86,53,.16),transparent 42%),
+    url("https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1600&q=72");
+  background-position:center 38%;
+  opacity:.12;
+}
+#orabar.atmo-section::before{
+  background-image:
+    radial-gradient(circle at 78% 40%,rgba(53,112,212,.13),transparent 34%),
+    radial-gradient(circle at 18% 66%,rgba(207,131,48,.12),transparent 36%),
+    url("https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1600&q=72");
+  background-position:center;
+  opacity:.10;
+}
+@media(max-width:640px){
+  .section.atmo-section::before{
+    opacity:.08;
+    filter:blur(16px) saturate(.86) contrast(.94);
+    transform:scale(1.1);
+  }
+  #salon.atmo-section::before{opacity:.09}
+  #orabar.atmo-section::before{opacity:.075}
+}
+
 </style>
 </head>
 <body>
@@ -293,7 +346,7 @@ header{
 <div class="hero-card glass reveal in" id="heroCard" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter"><small>CREATIVE PORTFOLIO</small><strong>IDEIA</strong><i>↓</i><strong>IMAGEM</strong></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div></section>
 <div class="marquee"><div class="track"><span>DIREÇÃO CRIATIVA</span><span>PRODUÇÃO COM IA</span><span>CAPTAÇÃO MOBILE</span><span>EDIÇÃO DE VÍDEO</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>CONTEÚDO PARA REDES</span><span>CAMPANHAS DIGITAIS</span><span>DIREÇÃO CRIATIVA</span><span>PRODUÇÃO COM IA</span><span>CAPTAÇÃO MOBILE</span><span>EDIÇÃO DE VÍDEO</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>CONTEÚDO PARA REDES</span><span>CAMPANHAS DIGITAIS</span></div></div>
 
-<section class="section" id="salon"><div class="wrap"><div class="head reveal"><div><div class="label">01 · SALON LINE</div><h2>Produto com apetite visual.</h2></div><p>Peças de beleza que combinam produto, textura, cor e ritmo de social com um acabamento mais publicitário.</p></div><div class="grid"><article class="work-card  reveal" data-tilt>
+<section class="section atmo-section" id="salon"><div class="wrap"><div class="head reveal"><div><div class="label">01 · SALON LINE</div><h2>Produto com apetite visual.</h2></div><p>Peças de beleza que combinam produto, textura, cor e ritmo de social com um acabamento mais publicitário.</p></div><div class="grid"><article class="work-card  reveal" data-tilt>
    <div class="media portrait">
      <img class="poster" src="https://drive.google.com/thumbnail?id=1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP&sz=w1600" alt="Cereja x Argan" loading="lazy">
      <button class="play-ui" type="button" data-video="1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP" data-orientation="portrait" data-title="Cereja x Argan" aria-label="REPRODUZIR: Cereja x Argan">
@@ -366,7 +419,7 @@ header{
    </div>
    <div class="copy"><span class="eyebrow">Tecno</span><h3>Spark 50</h3><p>Apresentação de smartphone com linguagem de campanha e acabamento tecnológico.</p><div class="chips"><span>Tecnologia</span><span>Campanha</span></div></div>
  </article></div></div></section>
-<section class="section" id="orabar"><div class="wrap"><div class="head reveal"><div><div class="label">04 · ORABAR</div><h2>Personagens, produto e mundo próprio.</h2></div><p>Experimentos de campanha construídos com IA para criar personagens, situações e uma estética de marca menos previsível.</p></div><div class="grid"><article class="work-card  reveal" data-tilt>
+<section class="section atmo-section" id="orabar"><div class="wrap"><div class="head reveal"><div><div class="label">04 · ORABAR</div><h2>Personagens, produto e mundo próprio.</h2></div><p>Experimentos de campanha construídos com IA para criar personagens, situações e uma estética de marca menos previsível.</p></div><div class="grid"><article class="work-card  reveal" data-tilt>
    <div class="media portrait">
      <img class="poster" src="https://drive.google.com/thumbnail?id=10JJnhOfIJKDadFhXjM9rJXlAd72uMVge&sz=w1600" alt="Cópia de Bebê" loading="lazy">
      <button class="play-ui" type="button" data-video="10JJnhOfIJKDadFhXjM9rJXlAd72uMVge" data-orientation="portrait" data-title="Cópia de Bebê" aria-label="REPRODUZIR: Cópia de Bebê">
