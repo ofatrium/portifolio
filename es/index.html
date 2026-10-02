@@ -16,6 +16,251 @@ header,main,footer{position:relative;z-index:2}header{position:sticky;top:0;z-in
 @media(max-width:900px){.navlinks{display:none}.hero-grid,.head,.about,.brief-grid,.cta-row{grid-template-columns:1fr}.hero{min-height:auto}.hero-card{height:430px}.formats,.plans{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:1fr 1fr}.method{grid-template-columns:1fr 1fr}.qr{margin:0}.cursor-light{display:none}}
 @media(max-width:640px){.wrap{width:min(var(--max),calc(100% - 24px))}.nav{height:68px}.brand{font-size:12px}.mark{font-size:25px}.header-actions{gap:6px}.langs a{font-size:8px;padding:6px}.btn{padding:11px 13px;font-size:12px}.hero{padding-top:48px}.hero h1{font-size:56px}.hero-card{height:350px;border-radius:28px}.hudcenter strong{font-size:40px}.stats,.formats,.services,.method,.plans{grid-template-columns:1fr}.section{padding:76px 0}.head h2,.statement h2,.about h2,.brief h2,.cta h2{font-size:48px}.brief-box,.cta-box{padding:28px 22px}.enterprise-offer{align-items:flex-start;flex-direction:column;padding:20px}.enterprise-offer .btn{width:100%}.langs{display:flex}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* PREMIUM GLASS REFERENCE V1 — smoked black glass with warm/cool rim refraction */
+:root{
+  --glass-smoke:rgba(8,10,14,.64);
+  --glass-smoke-2:rgba(13,16,22,.48);
+  --glass-rim-gold:rgba(244,190,103,.92);
+  --glass-rim-warm:rgba(255,224,176,.66);
+  --glass-rim-cool:rgba(225,237,255,.86);
+  --glass-rim-blue:rgba(132,181,255,.48);
+  --glass-rim-dim:rgba(255,255,255,.08);
+}
+body{
+  background:
+    radial-gradient(900px 620px at 10% 78%,rgba(224,144,58,.055),transparent 58%),
+    radial-gradient(980px 680px at 86% 18%,rgba(91,143,255,.075),transparent 60%),
+    linear-gradient(180deg,#020304 0%,#05070b 52%,#030405 100%)!important;
+}
+header{
+  background:linear-gradient(180deg,rgba(7,9,13,.78),rgba(4,5,8,.66))!important;
+  border-bottom-color:rgba(255,255,255,.075)!important;
+}
+.glass,
+.work-card,
+.stat,
+.format,
+.service,
+.plan,
+.brief-box,
+.cta-box,
+.portrait,
+.enterprise-offer,
+.player-shell{
+  position:relative;
+  border-color:rgba(255,255,255,.11)!important;
+  background:
+    radial-gradient(120% 150% at 0% 0%,rgba(242,181,93,.075),transparent 35%),
+    radial-gradient(110% 150% at 100% 0%,rgba(222,235,255,.055),transparent 34%),
+    linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.012) 42%,rgba(255,255,255,.025)),
+    var(--glass-smoke)!important;
+  backdrop-filter:blur(26px) saturate(128%)!important;
+  -webkit-backdrop-filter:blur(26px) saturate(128%)!important;
+  box-shadow:
+    inset 1px 0 0 rgba(244,190,103,.09),
+    inset -1px 0 0 rgba(225,237,255,.085),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -1px 0 rgba(255,255,255,.025),
+    inset 12px 0 32px -28px rgba(244,190,103,.72),
+    inset -12px 0 32px -28px rgba(223,237,255,.62),
+    0 26px 72px rgba(0,0,0,.38)!important;
+}
+.glass::after,
+.work-card::after,
+.stat::after,
+.format::after,
+.service::after,
+.plan::after,
+.brief-box::after,
+.cta-box::after,
+.portrait::after,
+.enterprise-offer::after,
+.player-shell::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:12;
+  border-radius:inherit;
+  padding:1.25px;
+  pointer-events:none;
+  background:
+    conic-gradient(
+      from 218deg,
+      var(--glass-rim-gold) 0deg,
+      var(--glass-rim-warm) 34deg,
+      rgba(255,255,255,.28) 76deg,
+      var(--glass-rim-dim) 132deg,
+      rgba(255,255,255,.06) 192deg,
+      var(--glass-rim-blue) 246deg,
+      var(--glass-rim-cool) 302deg,
+      var(--glass-rim-gold) 360deg
+    );
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:.78;
+}
+.glass::before,
+.work-card::before,
+.refract::before{
+  filter:blur(.15px);
+}
+.hero-card,
+.work-card,
+.format,
+.service,
+.plan,
+.stat,
+.brief-box,
+.cta-box,
+.enterprise-offer,
+.player-shell{
+  transition:
+    transform .38s cubic-bezier(.2,.8,.2,1),
+    box-shadow .38s cubic-bezier(.2,.8,.2,1),
+    border-color .3s ease,
+    background .3s ease!important;
+}
+.hero-card:hover,
+.work-card:hover,
+.format:hover,
+.service:hover,
+.plan:hover,
+.stat:hover,
+.brief-box:hover,
+.cta-box:hover,
+.enterprise-offer:hover{
+  border-color:rgba(255,255,255,.18)!important;
+  box-shadow:
+    inset 1px 0 0 rgba(244,190,103,.16),
+    inset -1px 0 0 rgba(225,237,255,.15),
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 14px 0 34px -28px rgba(244,190,103,.85),
+    inset -14px 0 34px -28px rgba(225,237,255,.78),
+    0 36px 92px rgba(0,0,0,.50),
+    0 0 26px rgba(244,190,103,.04),
+    0 0 32px rgba(106,158,255,.035)!important;
+}
+.refract:before,
+.hero-card:before,
+.work-card:before{
+  background:
+    linear-gradient(
+      105deg,
+      transparent 42%,
+      rgba(255,220,168,.055) 46%,
+      rgba(255,255,255,.19) 49.4%,
+      rgba(186,213,255,.11) 51.2%,
+      transparent 56%
+    )!important;
+  opacity:.40!important;
+}
+.refract:hover:before,
+.hero-card:hover:before,
+.work-card:hover:before{opacity:.82!important;}
+.method{
+  border-color:rgba(255,255,255,.14)!important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012)),
+    rgba(6,8,12,.68)!important;
+  box-shadow:
+    inset 1px 0 0 rgba(244,190,103,.08),
+    inset -1px 0 0 rgba(225,237,255,.07),
+    0 28px 72px rgba(0,0,0,.34)!important;
+}
+.step{
+  background:
+    radial-gradient(130% 120% at 0% 0%,rgba(244,190,103,.055),transparent 36%),
+    radial-gradient(120% 120% at 100% 0%,rgba(210,231,255,.045),transparent 34%),
+    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012)),
+    rgba(8,10,14,.60)!important;
+  backdrop-filter:blur(24px) saturate(125%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(125%)!important;
+  box-shadow:
+    inset 1px 0 0 rgba(244,190,103,.06),
+    inset -1px 0 0 rgba(225,237,255,.055)!important;
+}
+.step:hover{
+  background:
+    radial-gradient(130% 120% at 0% 0%,rgba(244,190,103,.085),transparent 38%),
+    radial-gradient(120% 120% at 100% 0%,rgba(210,231,255,.065),transparent 36%),
+    linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.016)),
+    rgba(9,11,16,.62)!important;
+}
+.step strong{color:rgba(179,205,255,.34)!important;}
+.btn:not(.primary),
+.langs,
+.pill,
+.chip,
+.chips span,
+.field,
+.scope-note{
+  border-color:rgba(255,255,255,.11)!important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.012)),
+    rgba(9,11,15,.50)!important;
+  backdrop-filter:blur(18px) saturate(120%)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(120%)!important;
+  box-shadow:
+    inset 1px 0 0 rgba(244,190,103,.045),
+    inset -1px 0 0 rgba(225,237,255,.04),
+    inset 0 1px 0 rgba(255,255,255,.055)!important;
+}
+.badge{
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.012)),
+    rgba(6,8,12,.64)!important;
+  border-color:rgba(255,255,255,.13)!important;
+  backdrop-filter:blur(20px) saturate(125%)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(125%)!important;
+  box-shadow:
+    inset 1px 0 0 rgba(244,190,103,.055),
+    inset -1px 0 0 rgba(225,237,255,.05),
+    inset 0 1px 0 rgba(255,255,255,.07)!important;
+}
+.player-shell{
+  overflow:hidden;
+  box-shadow:
+    inset 1px 0 0 rgba(244,190,103,.11),
+    inset -1px 0 0 rgba(225,237,255,.10),
+    inset 0 1px 0 rgba(255,255,255,.09),
+    0 46px 140px rgba(0,0,0,.66)!important;
+}
+.play-circle{
+  background:
+    radial-gradient(circle at 28% 18%,rgba(255,255,255,.98),rgba(241,236,227,.93) 55%,rgba(219,224,233,.90))!important;
+  box-shadow:
+    0 16px 42px rgba(0,0,0,.34),
+    0 0 0 1px rgba(255,255,255,.48),
+    -5px 0 18px rgba(244,190,103,.10),
+    5px 0 18px rgba(170,204,255,.10)!important;
+}
+@media(max-width:640px){
+  .glass::after,
+  .work-card::after,
+  .stat::after,
+  .format::after,
+  .service::after,
+  .plan::after,
+  .brief-box::after,
+  .cta-box::after,
+  .portrait::after,
+  .enterprise-offer::after,
+  .player-shell::after{opacity:.68;padding:1px}
+  .glass,
+  .work-card,
+  .stat,
+  .format,
+  .service,
+  .plan,
+  .brief-box,
+  .cta-box,
+  .portrait,
+  .enterprise-offer,
+  .player-shell{backdrop-filter:blur(20px) saturate(122%)!important;-webkit-backdrop-filter:blur(20px) saturate(122%)!important}
+}
+
 </style></head><body><div class="noise"></div><div class="cursor-light" id="cursorLight"></div>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><nav class="navlinks"><a href="#formatos">Formatos</a><a href="#servicos">Servicios</a><a href="#metodo">Método</a><a href="#planos">Planes</a></nav><div class="header-actions"><div class="langs"><a class="" href="/">PT-BR</a><a class="" href="/en/">EN</a><a class="active" href="/es/">ES</a></div><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Empezar proyecto ↗</a></div></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">PRODUCCIÓN AUDIOVISUAL + IA + DIRECCIÓN HUMANA</div><h1>Tienes la<br>idea.<br>Yo hago que<br><span class="grad">cobre vida.</span></h1><p>Edición, IA y dirección creativa para UGC, VSL, Reels, bodas, contenido de marca y campañas que necesitan captar atención sin parecer más de lo mismo.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Quiero dar vida a mi idea ↗</a><a class="btn" href="/portfolio/es/">Ver lo que produzco ↓</a></div><div class="clients"><span class="pill">Salon Line</span><span class="pill">Swiss Move</span><span class="pill">Healer</span><span class="pill">WE Travel UK</span><span class="pill">Workana</span></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter"><small>CREATIVE SYSTEM</small><strong>IDEIA</strong><i>→</i><strong>EXPERIÊNCIA</strong><div style="font-size:7px;letter-spacing:.22em;color:#676e79;margin-top:26px">EDITORIAL · UGC · CINEMA · PERFORMANCE</div></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats"><div class="stat glass refract reveal" data-tilt><b>2 años</b><span>en pipelines con IA</span></div><div class="stat glass refract reveal" data-tilt><b>9:16</b><span>listo para redes</span></div><div class="stat glass refract reveal" data-tilt><b>2</b><span>revisiones por video</span></div><div class="stat glass refract reveal" data-tilt><b>1 min</b><span>para un briefing rápido</span></div></div></div></section>
