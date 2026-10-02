@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atrium Visual — Edição, IA & Direção Criativa</title>
+<meta name="description" content="Produção audiovisual, edição, IA e direção criativa para marcas, campanhas e conteúdo digital.">
+<style>
+:root{--bg:#0b0b0b;--panel:#111;--panel2:#151515;--text:#f4f1e9;--muted:#aaa79f;--gold:#c7a84d;--line:#272727;--white:#fff;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;letter-spacing:.13em;font-size:15px}.brand span{color:var(--gold)}
+.menu{display:flex;align-items:center;gap:24px;font-size:14px;color:#cbc8c0}.menu a:hover{color:#fff}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border:1px solid #3a3528;background:#17140d;color:#f7e7a9;border-radius:999px;font-weight:700;font-size:14px}
+.btn:hover{border-color:var(--gold)}.ghost{background:transparent;color:var(--text);border-color:#343434}
+.hero{padding:86px 0 56px;min-height:670px;display:grid;align-items:center}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:800}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(54px,8vw,110px);line-height:.92;letter-spacing:-.06em;margin:20px 0 28px;max-width:1000px}
+.lead{max-width:760px;color:#c8c4bb;font-size:clamp(18px,2vw,22px);line-height:1.6}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.clientbar{margin-top:68px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;color:#817e76;text-transform:uppercase;letter-spacing:.14em;font-size:11px;display:flex;gap:28px;flex-wrap:wrap}
+.section{padding:96px 0;border-top:1px solid var(--line)}.sectionhead{display:grid;grid-template-columns:.8fr 1.6fr;gap:40px;margin-bottom:44px}.sectionhead h2{font-size:clamp(38px,5vw,64px);letter-spacing:-.045em;line-height:1}.sectionhead p{color:var(--muted);font-size:18px;line-height:1.7}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.format{border:1px solid var(--line);background:linear-gradient(180deg,#151515,#0e0e0e);border-radius:18px;overflow:hidden;min-height:430px;display:flex;flex-direction:column}.format img{width:100%;height:230px;object-fit:cover;filter:saturate(.82) contrast(1.04)}.format .body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}.num{color:var(--gold);font-size:11px;letter-spacing:.12em}.format h3{font-size:22px;margin:0}.format p{color:#9e9b93;line-height:1.55;font-size:14px}.format .more{margin-top:auto;color:#d9c67d;font-size:13px}
+.ai-art{display:grid;place-items:center;height:230px;background:radial-gradient(circle at 30% 30%,#4a3b16,transparent 40%),linear-gradient(135deg,#0d0d0d,#1b180e);font-size:64px;color:var(--gold)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.service{padding:28px;border:1px solid var(--line);border-radius:18px;background:#0f0f0f}.service b{display:block;color:var(--gold);font-size:12px;margin-bottom:30px}.service h3{font-size:23px}.service p{color:var(--muted);line-height:1.6}
+.statement{padding:110px 0;text-align:center;background:radial-gradient(circle at center,#242013 0,transparent 52%)}.statement h2{font-size:clamp(48px,7vw,88px);line-height:.95;letter-spacing:-.05em;margin-bottom:24px}.statement p{max-width:720px;margin:0 auto;color:#b9b5ab;font-size:18px;line-height:1.7}
+.method{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}.step{background:#0f0f0f;padding:30px;min-height:250px}.step strong{font-size:52px;color:#2b2a26}.step h3{font-size:22px;margin-top:34px}.step p{color:var(--muted)}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.plan{padding:28px;border:1px solid var(--line);border-radius:18px;background:#0f0f0f}.plan.featured{border-color:#6d5b29;background:linear-gradient(180deg,#17140c,#0f0f0f)}.plan small{color:var(--gold);text-transform:uppercase;letter-spacing:.12em}.price{font-size:38px;font-weight:800;margin:18px 0}.plan ul{padding-left:18px;color:var(--muted);line-height:1.8;font-size:14px}
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:center}.portrait{border-radius:22px;overflow:hidden;border:1px solid var(--line)}.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.chip{border:1px solid #323232;border-radius:999px;padding:9px 12px;color:#bbb7ae;font-size:13px}
+.cta{padding:110px 0}.cta-box{border:1px solid #4c4020;background:linear-gradient(140deg,#18140b,#0e0e0e 60%);border-radius:28px;padding:55px}.cta-box h2{font-size:clamp(46px,6vw,80px);line-height:.96;letter-spacing:-.05em}.contacts{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:#8f8c85}.footerrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.portfolio-promo{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:end;border:1px solid #4f4221;padding:38px;border-radius:22px;background:linear-gradient(135deg,#17140c,#101010)}.portfolio-promo h2{font-size:clamp(38px,5vw,62px);line-height:1;margin-bottom:14px}.portfolio-promo p{color:#b7b3a9;max-width:650px;line-height:1.6}
+@media(max-width:900px){.menu a:not(.btn){display:none}.hero{padding-top:60px;min-height:auto}.sectionhead,.about,.portfolio-promo{grid-template-columns:1fr}.grid4,.plans{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:1fr 1fr}.method{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wrap{width:min(100% - 24px,var(--max))}.nav{min-height:66px}.brand{font-size:13px}.btn{padding:11px 14px}.hero{padding:52px 0 36px}h1{font-size:52px}.section{padding:70px 0}.grid4,.services,.plans,.method{grid-template-columns:1fr}.format{min-height:0}.sectionhead{gap:14px}.sectionhead h2{font-size:42px}.statement{padding:78px 0}.cta-box{padding:30px 22px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#top"><span>Λ</span> ATRIUM VISUAL</a><nav class="menu"><a href="#formatos">Formatos</a><a href="#servicos">Serviços</a><a href="#metodo">Método</a><a href="/portfolio/">Portfólio</a><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Começar projeto ↗</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap"><div class="eyebrow">Produção audiovisual + IA + direção humana</div><h1>Você tem a ideia.<br>Eu faço ela ganhar vida.</h1><p class="lead">Edição, IA e direção criativa para UGC, VSL, Reels, casamentos, conteúdo de marca e campanhas que precisam prender atenção sem parecer mais do mesmo.</p><div class="actions"><a class="btn" href="https://wa.me/5524974056237" target="_blank">Quero tirar minha ideia do papel ↗</a><a class="btn ghost" href="/portfolio/">Ver portfólio ↓</a></div><div class="clientbar"><span>Salon Line</span><span>Haier</span><span>Tecno</span><span>OraBar</span><span>Swiss Move</span><span>Healer</span></div></div></section>
+
+<section class="section" id="formatos"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Formatos</div><h2>Uma ideia pode ganhar várias formas.</h2></div><p>Não trabalho com um formato único. A linguagem muda conforme o objetivo, o público e a sensação que você quer deixar.</p></div><div class="grid4">
+<article class="format"><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/ugc-scene.png" alt="Criadora gravando UGC com celular"><div class="body"><span class="num">01</span><h3>UGC & VSL</h3><p>Gente falando com gente. Roteiro, direção, avatar, voz e edição com ritmo de anúncio.</p><span class="more">Conexão que prende ↗</span></div></article>
+<article class="format"><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/wedding-scene.png" alt="Casal celebrando casamento ao entardecer"><div class="body"><span class="num">02</span><h3>Casamentos & histórias</h3><p>O momento passa. O vídeo precisa fazer a emoção continuar presente.</p><span class="more">Histórias que ficam ↗</span></div></article>
+<article class="format"><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/podcast-scene.png" alt="Pessoas conversando em estúdio de podcast"><div class="body"><span class="num">03</span><h3>Podcast & conteúdo</h3><p>Cortes, narrativa, identidade visual e ritmo para transformar conversa em conteúdo.</p><span class="more">Conversas que conectam ↗</span></div></article>
+<article class="format"><div class="ai-art">AI</div><div class="body"><span class="num">04</span><h3>Campanhas com IA</h3><p>Conceitos que antes exigiriam produção complexa podem virar imagem, vídeo e campanha com uma pipeline mais ágil.</p><span class="more">Direção + tecnologia ↗</span></div></article>
+</div></div></section>
+
+<section class="section"><div class="wrap"><div class="portfolio-promo"><div><div class="eyebrow">Trabalhos selecionados</div><h2>Projetos que já saíram da ideia para a tela.</h2><p>Uma seleção de peças produzidas para marcas, com diferentes linguagens de direção, IA generativa, edição e acabamento.</p></div><div><a class="btn" href="/portfolio/">Explorar portfólio ↗</a></div></div></div></section>
+
+<section class="section" id="servicos"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">O que fazemos</div><h2>Estratégia, criação e acabamento no mesmo fluxo.</h2></div><p>A IA acelera a produção. A direção decide o que vale a pena aparecer, como aparece e por quê.</p></div><div class="services">
+<div class="service"><b>01 ✦</b><h3>Vídeos com IA</h3><p>Produção audiovisual com ferramentas generativas, sempre guiada por direção criativa humana.</p></div>
+<div class="service"><b>02 ◈</b><h3>VSL & anúncios</h3><p>Roteiro persuasivo, avatar, voz, ritmo e edição desenhados para transformar atenção em ação.</p></div>
+<div class="service"><b>03 ↗</b><h3>Conteúdo para Instagram</h3><p>Reels, TikTok e Shorts feitos para retenção, clareza de mensagem e construção de autoridade.</p></div>
+<div class="service"><b>04 ◌</b><h3>Documentário criativo</h3><p>Histórias reais com identidade sonora, narração e edição cinematográfica.</p></div>
+<div class="service"><b>05 ⌘</b><h3>Identidade visual em vídeo</h3><p>Paleta, tipografia, movimento e linguagem audiovisual consistentes para a sua marca.</p></div>
+<div class="service"><b>06 ✚</b><h3>Produção eclesiástica</h3><p>Séries, devocionais, testemunhos e campanhas que comunicam a mensagem com propósito.</p></div>
+</div></div></section>
+
+<section class="statement"><div class="wrap"><div class="eyebrow">Imagens com propósito</div><h2>Tecnologia acelera.<br>Intenção diferencia.</h2><p>Uma imagem só tem valor quando carrega intenção. Por isso, a IA entra como ferramenta. A estratégia, a sensibilidade e as decisões criativas continuam humanas.</p></div></section>
+
+<section class="section" id="metodo"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Método</div><h2>Da conversa ao vídeo, sem complicação.</h2></div><p>Um fluxo enxuto para tirar a ideia da cabeça, transformar em conceito e devolver um material pronto para publicar.</p></div><div class="method">
+<div class="step"><strong>01</strong><h3>Entender</h3><p>Objetivo, público, referência e mensagem.</p></div>
+<div class="step"><strong>02</strong><h3>Direcionar</h3><p>Conceito, roteiro e linguagem visual.</p></div>
+<div class="step"><strong>03</strong><h3>Produzir</h3><p>IA, edição, som e acabamento no mesmo pipeline.</p></div>
+<div class="step"><strong>04</strong><h3>Refinar</h3><p>Você revisa. Eu lapido. Você recebe pronto.</p></div>
+</div></div></section>
+
+<section class="section" id="planos"><div class="wrap"><div class="sectionhead"><div><div class="eyebrow">Planos para conteúdo curto</div><h2>Comece com um vídeo. Escale quando fizer sentido.</h2></div><p>Roteiro e produção completos, legenda animada, formato 9:16, arquivo digital e duas revisões por vídeo.</p></div><div class="plans">
+<div class="plan"><small>Para testar</small><h3>Vídeo avulso</h3><div class="price">R$350</div><ul><li>1 vídeo completo</li><li>Roteiro + edição</li><li>Formato 9:16</li><li>2 revisões</li></ul></div>
+<div class="plan featured"><small>Mais escolhido</small><h3>Pacote 10</h3><div class="price">R$270<span style="font-size:14px">/vídeo</span></div><ul><li>R$ 2.700 no total</li><li>Roteiro + edição</li><li>2 revisões por vídeo</li><li>Fluxo pensado para redes</li></ul></div>
+<div class="plan"><small>Para volume</small><h3>Pacote 30</h3><div class="price">R$200<span style="font-size:14px">/vídeo</span></div><ul><li>R$ 6.000 no total</li><li>Padronização visual</li><li>Produção em lote</li></ul></div>
+<div class="plan"><small>Para presença</small><h3>90 dias</h3><div class="price">R$180<span style="font-size:14px">/vídeo</span></div><ul><li>90 vídeos</li><li>Produção contínua</li><li>Identidade consistente</li><li>Revisões inclusas</li></ul></div>
+</div></div></section>
+
+<section class="section"><div class="wrap about"><div class="portrait"><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/osires.jpg" alt="Osires, da Atrium Visual"></div><div><div class="eyebrow">Quem está por trás</div><h2 style="font-size:clamp(48px,6vw,78px);letter-spacing:-.05em;margin:16px 0 24px">Prazer, Osires.</h2><p class="lead">É comigo que você conversa sobre sua ideia. Da primeira referência ao último ajuste, o olhar humano dá direção ao que criamos.</p><div class="chips"><span class="chip">Mobile-first</span><span class="chip">IA aplicada</span><span class="chip">Direção criativa</span><span class="chip">Atendimento direto</span></div><a class="btn" href="https://wa.me/5524974056237" target="_blank">Vamos conversar ↗</a></div></div></section>
+
+<section class="cta"><div class="wrap"><div class="cta-box"><div class="eyebrow">Uma conversa. Muitas possibilidades.</div><h2>Seu próximo vídeo<br>começa aqui.</h2><p class="lead">Conte sua ideia. Eu mostro o caminho.</p><div class="contacts"><a class="btn" href="https://wa.me/5524974056237" target="_blank">WhatsApp ↗</a><a class="btn ghost" href="mailto:ofatrium@gmail.com">E-mail ↗</a><a class="btn ghost" href="/portfolio/">Portfólio ↗</a></div></div></div></section>
+</main>
+<footer><div class="wrap footerrow"><div><strong style="color:#ddd">Λ ATRIUM VISUAL</strong><br><span>Vídeos que transformam atenção em resultado.</span></div><div>Brasil · Atendimento internacional<br>© 2026 Atrium Visual</div></div></footer>
+</body>
+</html>
