@@ -716,6 +716,148 @@ header{
   .atrium-glass-v2:hover{transform:none}
 }
 
+
+/* ATRIUM UI V5 — orange controls + uniform editorial video thumbnails */
+:root{--atrium-orange:#ff5a36;--atrium-orange-soft:rgba(255,90,54,.22)}
+
+/* Any control that could fall back to dark/black text now uses the Atrium orange */
+button,.btn,.footer-pill,.langs a,.mobile-langs a,.control-btn,.close,.play-word{
+  color:var(--atrium-orange)!important;
+}
+.btn.primary,.btn.primary:hover{
+  color:var(--atrium-orange)!important;
+}
+.play-circle{color:var(--atrium-orange)!important}
+button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
+  color:#ff7a58!important;
+}
+
+/* Portfolio: consistent 2-column editorial grid */
+#salon .grid,#haier .grid,#tecno .grid,#orabar .grid,#vsl .grid,#social .grid{
+  align-items:stretch!important;
+}
+#salon .work-card,#haier .work-card,#tecno .work-card,#orabar .work-card,#vsl .work-card,#social .work-card,
+#salon .work-card.wide,#haier .work-card.wide,#tecno .work-card.wide,#orabar .work-card.wide,#vsl .work-card.wide,#social .work-card.wide,
+#salon .work-card.narrow,#haier .work-card.narrow,#tecno .work-card.narrow,#orabar .work-card.narrow,#vsl .work-card.narrow,#social .work-card.narrow{
+  grid-column:span 6!important;
+  min-width:0!important;
+}
+/* center the single third card instead of leaving an accidental-looking gap */
+#tecno .grid .work-card:last-child,
+#orabar .grid .work-card:last-child{
+  grid-column:4 / span 6!important;
+}
+
+/* All video thumbnails use the same 4:5 canvas, regardless of source orientation */
+.work-card .media,
+.work-card .media.portrait,
+.work-card .media.landscape{
+  aspect-ratio:4/5!important;
+  height:auto!important;
+}
+.work-card .poster{
+  width:100%!important;height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+
+/* Build the thumbnail identity inside the image itself */
+.work-card .copy{
+  position:absolute!important;
+  inset:auto 0 0 0!important;
+  padding:86px 28px 27px!important;
+  background:
+    linear-gradient(180deg,transparent 0%,rgba(2,4,7,.30) 22%,rgba(2,4,7,.82) 58%,rgba(2,4,7,.96) 100%)!important;
+  z-index:6!important;
+  pointer-events:none!important;
+}
+.work-card .copy::before{
+  content:"ATRIUM VISUAL";
+  display:block;
+  margin-bottom:13px;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.30em;
+  color:rgba(238,244,248,.78);
+}
+.work-card .copy .eyebrow{
+  display:block!important;
+  color:var(--atrium-orange)!important;
+  font-size:10px!important;
+  font-weight:900!important;
+  letter-spacing:.18em!important;
+  margin-bottom:7px!important;
+}
+.work-card .copy h3{
+  display:block!important;
+  margin:0!important;
+  max-width:88%!important;
+  color:#f7f3ec!important;
+  font-size:clamp(28px,2.6vw,42px)!important;
+  line-height:.98!important;
+  letter-spacing:-.045em!important;
+  text-shadow:0 3px 22px rgba(0,0,0,.72);
+}
+.work-card .copy p{display:none!important}
+.work-card .copy .chips{
+  display:flex!important;
+  margin-top:17px!important;
+  gap:8px!important;
+}
+.work-card .copy .chips span{
+  display:inline-flex!important;
+  align-items:center;
+  color:#dce5ec!important;
+  border:1px solid rgba(103,216,255,.34)!important;
+  background:rgba(7,13,20,.46)!important;
+  padding:7px 11px!important;
+  font-size:8px!important;
+  letter-spacing:.08em!important;
+  border-radius:999px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 0 10px rgba(78,205,255,.06)!important;
+}
+.work-card .copy .chips span:nth-child(2){
+  border-color:rgba(255,164,62,.38)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 0 11px rgba(255,154,45,.07)!important;
+}
+
+/* Keep the play control clean; the thumbnail itself carries the information */
+.work-card .play-copy,.work-card .play-word{display:none!important}
+.work-card .play-circle{
+  left:22px!important;top:22px!important;
+  width:50px!important;height:50px!important;
+  color:var(--atrium-orange)!important;
+  background:rgba(239,249,252,.90)!important;
+  border:1px solid rgba(255,255,255,.58)!important;
+}
+
+/* Stronger glow stays interaction-led */
+.work-card:hover{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 18px 0 30px -22px rgba(76,214,255,.72),
+    inset -17px 0 30px -22px rgba(255,184,75,.56),
+    inset 0 -23px 36px -24px rgba(255,164,45,.82),
+    0 32px 78px rgba(0,0,0,.50),
+    0 -4px 24px rgba(75,207,255,.25),
+    0 18px 38px rgba(255,157,38,.18)!important;
+}
+
+/* Mobile: same thumb identity, one column, reduced density */
+@media(max-width:760px){
+  #salon .work-card,#haier .work-card,#tecno .work-card,#orabar .work-card,#vsl .work-card,#social .work-card,
+  #tecno .grid .work-card:last-child,#orabar .grid .work-card:last-child{
+    grid-column:1 / -1!important;
+  }
+  .work-card .media,.work-card .media.portrait,.work-card .media.landscape{aspect-ratio:4/5!important}
+  .work-card .copy{padding:76px 20px 21px!important}
+  .work-card .copy::before{font-size:6.5px;margin-bottom:10px}
+  .work-card .copy h3{font-size:30px!important;max-width:92%!important}
+  .work-card .copy .chips{margin-top:13px!important}
+  .work-card .copy .chips span{font-size:7px!important;padding:6px 9px!important}
+  .work-card .play-circle{left:15px!important;top:15px!important;width:44px!important;height:44px!important}
+}
+
 </style>
 </head>
 <body>
