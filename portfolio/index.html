@@ -913,6 +913,14 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
   .work-card .copy::before{font-size:6.5px;margin-bottom:10px}
 }
 
+
+/* GENERATED CONCEPT THUMBNAILS V1 */
+.work-card .copy{display:none!important}
+.work-card .media::before{display:none!important}
+.work-card .media::after{background:linear-gradient(180deg,rgba(0,0,0,.01),rgba(0,0,0,.045))!important}
+.work-card .poster{filter:none!important;transform:none!important}
+.work-card:hover .poster{filter:saturate(1.035) contrast(1.02)!important;transform:scale(1.015)!important}
+
 </style>
 </head>
 <body>
@@ -999,26 +1007,26 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
    </div>
    <div class="copy"><span class="eyebrow">Tecno</span><h3>Spark 50</h3><p>Apresentação de smartphone com linguagem de campanha e acabamento tecnológico.</p><div class="chips"><span>Tecnologia</span><span>Campanha</span></div></div>
  </article></div></div></section>
-<section class="section atmo-section" id="orabar"><div class="wrap"><div class="head reveal"><div><div class="label">04 · ORABAR</div><h2>Personagens, produto e mundo próprio.</h2></div><p>Experimentos de campanha construídos com IA para criar personagens, situações e uma estética de marca menos previsível.</p></div><div class="grid"><article class="work-card  reveal" data-tilt>
+<section class="section atmo-section" id="orabar"><div class="wrap"><div class="head reveal"><div><div class="label">04 · ORABAR</div><h2>Água, design e presença de marca.</h2></div><p>Campanhas para dispenser de água com foco em produto, bem-estar, confiança e uma linguagem visual premium.</p></div><div class="grid"><article class="work-card  reveal" data-tilt>
    <div class="media portrait">
-     <img class="poster" src="https://drive.google.com/thumbnail?id=10JJnhOfIJKDadFhXjM9rJXlAd72uMVge&sz=w1600" alt="Cópia de Bebê" loading="lazy">
-     <button class="play-ui" type="button" data-video="10JJnhOfIJKDadFhXjM9rJXlAd72uMVge" data-orientation="portrait" data-title="Cópia de Bebê" aria-label="REPRODUZIR: Cópia de Bebê">
+     <img class="poster" src="https://drive.google.com/thumbnail?id=10JJnhOfIJKDadFhXjM9rJXlAd72uMVge&sz=w1600" alt="Pureza em cada gota" loading="lazy">
+     <button class="play-ui" type="button" data-video="10JJnhOfIJKDadFhXjM9rJXlAd72uMVge" data-orientation="portrait" data-title="Pureza em cada gota" aria-label="REPRODUZIR: Pureza em cada gota">
        <span class="play-circle">▶</span>
-       <span class="play-copy"><b>Cópia de Bebê</b><small>OraBar</small></span>
+       <span class="play-copy"><b>Pureza em cada gota</b><small>OraBar</small></span>
        <span class="play-word">REPRODUZIR ↗</span>
      </button>
    </div>
-   <div class="copy"><span class="eyebrow">OraBar</span><h3>Cópia de Bebê</h3><p>Personagem e narrativa visual construídos para uma peça curta de alto impacto.</p><div class="chips"><span>Personagem</span><span>IA</span></div></div>
+   <div class="copy"><span class="eyebrow">OraBar</span><h3>Pureza em cada gota</h3><p>Personagem e narrativa visual construídos para uma peça curta de alto impacto.</p><div class="chips"><span>Personagem</span><span>IA</span></div></div>
  </article><article class="work-card  reveal" data-tilt>
    <div class="media portrait">
-     <img class="poster" src="https://drive.google.com/thumbnail?id=1-iwzKFqRSB365xAolHARJ0quTHNpJWVH&sz=w1600" alt="Oldwoman" loading="lazy">
-     <button class="play-ui" type="button" data-video="1-iwzKFqRSB365xAolHARJ0quTHNpJWVH" data-orientation="portrait" data-title="Oldwoman" aria-label="REPRODUZIR: Oldwoman">
+     <img class="poster" src="https://drive.google.com/thumbnail?id=1-iwzKFqRSB365xAolHARJ0quTHNpJWVH&sz=w1600" alt="Bem-estar com design" loading="lazy">
+     <button class="play-ui" type="button" data-video="1-iwzKFqRSB365xAolHARJ0quTHNpJWVH" data-orientation="portrait" data-title="Bem-estar com design" aria-label="REPRODUZIR: Bem-estar com design">
        <span class="play-circle">▶</span>
-       <span class="play-copy"><b>Oldwoman</b><small>OraBar</small></span>
+       <span class="play-copy"><b>Bem-estar com design</b><small>OraBar</small></span>
        <span class="play-word">REPRODUZIR ↗</span>
      </button>
    </div>
-   <div class="copy"><span class="eyebrow">OraBar</span><h3>Oldwoman</h3><p>Campanha com personagem digital, humor visual e direção de cena.</p><div class="chips"><span>Personagem</span><span>IA</span></div></div>
+   <div class="copy"><span class="eyebrow">OraBar</span><h3>Bem-estar com design</h3><p>Campanha com personagem digital, humor visual e direção de cena.</p><div class="chips"><span>Personagem</span><span>IA</span></div></div>
  </article><article class="work-card wide reveal" data-tilt>
    <div class="media landscape">
      <img class="poster" src="https://drive.google.com/thumbnail?id=1bjPxk8huPaLV7Og_H0KwEpGrLpxc2xGy&sz=w1600" alt="OraWater" loading="lazy">
@@ -1119,45 +1127,22 @@ document.querySelectorAll(q).forEach(el=>{el.classList.add('atrium-glass-v2');el
 </script>
 
 <script>
-/* Build a real styled thumbnail asset for every portfolio video */
-document.querySelectorAll('.work-card').forEach(card=>{
-  const btn=card.querySelector('.play-ui');
-  const img=card.querySelector('.poster');
-  const titleEl=card.querySelector('.copy h3');
-  const brandEl=card.querySelector('.copy .eyebrow');
-  if(!btn||!img)return;
-  const id=btn.dataset.video;
-  const title=(titleEl?.textContent||btn.dataset.title||'Projeto').trim();
-  const brand=(brandEl?.textContent||'Atrium Visual').trim();
-  const fallback=img.src;
-  img.onerror=()=>{img.onerror=null;img.src=fallback};
-  img.src='/api/thumb?id='+encodeURIComponent(id)+'&title='+encodeURIComponent(title)+'&brand='+encodeURIComponent(brand);
-});</script>
-<script>
-/* Static Atrium thumbnails */
-(()=> {
-  const thumbs={
-    "1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP":"/assets/thumbs/salon-cereja.webp",
-    "1Gbh9PaNkOyD99Iv41HTKZ-UOFZjHEUb7":"/assets/thumbs/salon-cachos.webp",
-    "1CCrJmTGxYEG5Z4N-FvFVM0LW58YVvw_x":"/assets/thumbs/haier-geladeira.webp",
-    "1u7GEsYQ9VXK1G9_bqNn82aDSy5714M54":"/assets/thumbs/haier-casa.webp",
-    "1ysOOigGUm1V6wtwtHaH1E2-puU1sh1J7":"/assets/thumbs/tecno-motion.webp",
-    "1eIJWuYvwjq50g4gbMSG3zJ8moG_UY8s8":"/assets/thumbs/tecno-life.webp",
-    "1JqPWPtba6G9XoJ8jByjkAaoUwbOZvmjc":"/assets/thumbs/tecno-spark50.webp",
-    "10JJnhOfIJKDadFhXjM9rJXlAd72uMVge":"/assets/thumbs/orabar-bebe.webp",
-    "1-iwzKFqRSB365xAolHARJ0quTHNpJWVH":"/assets/thumbs/orabar-oldwoman.webp",
-    "1bjPxk8huPaLV7Og_H0KwEpGrLpxc2xGy":"/assets/thumbs/orabar-orawater.webp",
-    "1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W":"/assets/thumbs/vsl-cafe.webp",
-    "1SMIUIOrMrrSTKmj9KiSIMfbH0avqj_DW":"/assets/thumbs/vsl-tdah.webp",
-    "10iB9DfL159jgB5xic-FKkErRV-kHbo-6":"/assets/thumbs/vsl-kgen3.webp",
-    "15_9_fhK5nu1tmkzX3Fbu4ReUL4RH7bRJ":"/assets/thumbs/vsl-kgen5.webp",
-    "1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm":"/assets/thumbs/social-dopamina.webp",
-    "1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2":"/assets/thumbs/social-espelho.webp"
-  };
-  document.querySelectorAll('.work-card').forEach(card=>{
-    const btn=card.querySelector('.play-ui'),img=card.querySelector('.poster');
-    if(btn&&img&&thumbs[btn.dataset.video]) img.src=thumbs[btn.dataset.video];
-  });
-})();
+/* Generated concept thumbnails hosted with the portfolio */
+(()=>{const thumbs={"1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP":"https://drive.google.com/thumbnail?id=1kU7KijqDfHtXnRSICYAnxGYcP2ADekKo&sz=w1600",
+"1Gbh9PaNkOyD99Iv41HTKZ-UOFZjHEUb7":"https://drive.google.com/thumbnail?id=1wGCZlq1vyQfIqv5fyKOkoKQ5JDqUqtbS&sz=w1600",
+"1CCrJmTGxYEG5Z4N-FvFVM0LW58YVvw_x":"https://drive.google.com/thumbnail?id=1bE1qJi-Cc5uc9rjmYpp9N0jSt0rtg2s7&sz=w1600",
+"1u7GEsYQ9VXK1G9_bqNn82aDSy5714M54":"https://drive.google.com/thumbnail?id=1a_tRrt1FwUWamO_7uLqTk7RkRniT3uAc&sz=w1600",
+"1ysOOigGUm1V6wtwtHaH1E2-puU1sh1J7":"https://drive.google.com/thumbnail?id=13FgNO8xZnDwDHJY3ShfpUg5u0fVyoMnq&sz=w1600",
+"1eIJWuYvwjq50g4gbMSG3zJ8moG_UY8s8":"https://drive.google.com/thumbnail?id=1S4D6LYowwggcSQ8xPLO3sob2o5nmK-um&sz=w1600",
+"1JqPWPtba6G9XoJ8jByjkAaoUwbOZvmjc":"https://drive.google.com/thumbnail?id=1DsHivmjlIAbuf24hSzy4veiWI6YY9DV9&sz=w1600",
+"10JJnhOfIJKDadFhXjM9rJXlAd72uMVge":"https://drive.google.com/thumbnail?id=11JJk_6B_WUJFwtuRIsCslHp-KBOVtStF&sz=w1600",
+"1-iwzKFqRSB365xAolHARJ0quTHNpJWVH":"https://drive.google.com/thumbnail?id=1z5u69vzfLXtur7UieE-WIBNL-m_j76LL&sz=w1600",
+"1bjPxk8huPaLV7Og_H0KwEpGrLpxc2xGy":"https://drive.google.com/thumbnail?id=1kupy8tKFBkXohjiKhrDETg8Cn25qpxjq&sz=w1600",
+"1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W":"https://drive.google.com/thumbnail?id=1r1JG1luzzH4w850fcUgKzVvdKvO0z10M&sz=w1600",
+"1SMIUIOrMrrSTKmj9KiSIMfbH0avqj_DW":"https://drive.google.com/thumbnail?id=1AntAHHhovpN3HhJkPelQbtVdl4AMzCdW&sz=w1600",
+"10iB9DfL159jgB5xic-FKkErRV-kHbo-6":"https://drive.google.com/thumbnail?id=1uGgQY2H_YbViXuyTuBjxK25U7tuOfIWl&sz=w1600",
+"15_9_fhK5nu1tmkzX3Fbu4ReUL4RH7bRJ":"https://drive.google.com/thumbnail?id=1QiHcAF-PS2aZvSdgQp5yMZwc-SzUpD6g&sz=w1600",
+"1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm":"https://drive.google.com/thumbnail?id=15C8zo14n_pozYxNhM6LCaQIpXDgaDTBq&sz=w1600",
+"1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2":"https://drive.google.com/thumbnail?id=1y4vGLh9BvVgQUb5li39ByKinO9YwKTSE&sz=w1600"};document.querySelectorAll('.work-card').forEach(card=>{const b=card.querySelector('.play-ui'),img=card.querySelector('.poster');if(b&&img&&thumbs[b.dataset.video])img.src=thumbs[b.dataset.video]})})();
 </script>
 </body></html>
