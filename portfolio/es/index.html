@@ -921,6 +921,22 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
 .work-card .poster{filter:none!important;transform:none!important}
 .work-card:hover .poster{filter:saturate(1.035) contrast(1.02)!important;transform:scale(1.015)!important}
 
+
+/* CONCEPT THUMB PLAY FIX V2 — keep only the play baked into the thumbnail */
+.work-card .play-circle{display:none!important}
+.work-card .play-ui{
+  cursor:pointer!important;
+}
+.work-card .play-ui::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+}
+@media(max-width:640px){
+  .work-card .play-ui{cursor:pointer!important}
+}
+
 </style>
 </head>
 <body>
