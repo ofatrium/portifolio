@@ -814,6 +814,49 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
   .home-capabilities .cap-track span:after{margin-left:34px}
 }
 
+
+/* HOME LAYOUT + WARM AMBIENT GLOW V7 */
+body{
+  background:
+    radial-gradient(920px 620px at 82% 14%,rgba(239,188,99,.13),transparent 60%),
+    radial-gradient(760px 520px at 92% 58%,rgba(215,139,50,.085),transparent 64%),
+    radial-gradient(980px 650px at 58% 18%,rgba(45,91,194,.12),transparent 62%),
+    linear-gradient(180deg,#050608 0%,#060912 54%,#090a0d 100%)!important;
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-10% -5%;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(ellipse at 82% 18%,rgba(239,188,99,.12),transparent 30%),
+    radial-gradient(ellipse at 74% 66%,rgba(209,132,41,.07),transparent 34%);
+  filter:blur(18px);
+}
+.hero>.wrap{position:relative;z-index:1}
+.hero-grid{width:100%;min-width:0}
+.hero-grid>*{min-width:0}
+.home-capabilities{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow:hidden!important;
+}
+.home-capabilities .cap-track{max-width:none;will-change:transform}
+@media(max-width:900px){
+  .hero-grid{width:100%;max-width:100%}
+  .hero::before{
+    background:
+      radial-gradient(ellipse at 72% 12%,rgba(239,188,99,.10),transparent 34%),
+      radial-gradient(ellipse at 82% 62%,rgba(209,132,41,.055),transparent 38%);
+  }
+}
+
 </style></head><body><div class="noise"></div><div class="cursor-light" id="cursorLight"></div>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><nav class="navlinks"><a href="#formatos">Formatos</a><a href="#servicos">Servicios</a><a href="#metodo">Método</a><a href="#planos">Planes</a><a href="/portfolio/es/">Portafolio</a></nav><div class="header-actions"><div class="langs"><a class="" href="/">PT-BR</a><a class="" href="/en/">EN</a><a class="active" href="/es/">ES</a></div><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Empezar proyecto ↗</a></div></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">PRODUCCIÓN AUDIOVISUAL + IA + DIRECCIÓN HUMANA</div><h1>Tienes la<br>idea.<br>Yo hago que<br><span class="grad">cobre vida.</span></h1><p>Edición, IA y dirección creativa para UGC, VSL, Reels, bodas, contenido de marca y campañas que necesitan captar atención sin parecer más de lo mismo.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Quiero dar vida a mi idea ↗</a><a class="btn" href="/portfolio/es/">Ver lo que produzco ↓</a></div><div class="home-capabilities"><div class="cap-track"><span>DIRECCIÓN CREATIVA</span><span>PRODUCCIÓN CON IA</span><span>CAPTURA MÓVIL</span><span>EDICIÓN DE VIDEO</span><span>MOTION DESIGN</span><span>DISEÑO SONORO</span><span>CONTENIDO PARA REDES</span><span>CAMPAÑAS DIGITALES</span><span>DIRECCIÓN CREATIVA</span><span>PRODUCCIÓN CON IA</span><span>CAPTURA MÓVIL</span><span>EDICIÓN DE VIDEO</span><span>MOTION DESIGN</span><span>DISEÑO SONORO</span><span>CONTENIDO PARA REDES</span><span>CAMPAÑAS DIGITALES</span></div></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter"><small>SISTEMA CREATIVO</small><strong>IDEA</strong><i>→</i><strong>EXPERIENCIA</strong><div style="font-size:7px;letter-spacing:.22em;color:#676e79;margin-top:26px">EDITORIAL · UGC · CINEMA · PERFORMANCE</div></div><div class="hudbottom"><span>DIRIGIDO POR OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats"><div class="stat glass refract reveal" data-tilt><b>2 años</b><span>en pipelines con IA</span></div><div class="stat glass refract reveal" data-tilt><b>9:16</b><span>listo para redes</span></div><div class="stat glass refract reveal" data-tilt><b>2</b><span>revisiones por video</span></div><div class="stat glass refract reveal" data-tilt><b>1 min</b><span>para un briefing rápido</span></div></div></div></section>
