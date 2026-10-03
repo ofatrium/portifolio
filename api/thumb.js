@@ -58,7 +58,7 @@ export default async function handler(req,res){
 </g>
 <rect x="8" y="8" width="704" height="884" rx="46" fill="none" stroke="url(#rim)" stroke-width="3"/>
 <text x="662" y="50" text-anchor="end" fill="#eef5f8" fill-opacity=".80" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="4">ATRIUM VISUAL</text>
-<line x1="58" y1="648" x2="110" y2="648" stroke="#ff5a36" stroke-width="5" stroke-linecap="round"/>
+<line x1="58" y1="648" x2="110" y2="648" stroke="#efbc63" stroke-width="5" stroke-linecap="round"/>
 <text x="58" y="688" fill="#ff6a46" font-family="Arial,sans-serif" font-size="20" font-weight="800" letter-spacing="3">${brand.toUpperCase()}</text>
 <text x="58" y="748" fill="#f8f4ed" font-family="Arial,sans-serif" font-size="48" font-weight="800" letter-spacing="-1">${tspans}</text>
 </svg>`;
