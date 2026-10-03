@@ -9,6 +9,18 @@ const ALLOWED = new Set([
 "10JJnhOfIJKDadFhXjM9rJXlAd72uMVge",
 "1-iwzKFqRSB365xAolHARJ0quTHNpJWVH",
 "1bjPxk8huPaLV7Og_H0KwEpGrLpxc2xGy"
+,
+"1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W"
+,
+"1SMIUIOrMrrSTKmj9KiSIMfbH0avqj_DW"
+,
+"10iB9DfL159jgB5xic-FKkErRV-kHbo-6"
+,
+"15_9_fhK5nu1tmkzX3Fbu4ReUL4RH7bRJ"
+,
+"1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm"
+,
+"1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2"
 ]);
 
 export default async function handler(req, res) {
