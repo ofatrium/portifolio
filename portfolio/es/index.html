@@ -870,6 +870,14 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
 .play-circle{color:#101318!important}
 .btn.primary:hover{color:#ff7a58!important}
 
+
+/* ATRIUM THUMB ASSETS — use generated thumbnail image, not a second text panel */
+.work-card .copy{display:none!important}
+.work-card .media::before{display:none!important}
+.work-card .media::after{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.06))!important}
+.work-card .poster{filter:none!important;transform:none!important}
+.work-card:hover .poster{filter:saturate(1.04) contrast(1.02)!important;transform:scale(1.018)!important}
+
 </style>
 </head>
 <body>
@@ -1074,4 +1082,19 @@ if(!reduced){
 (()=>{const q='.glass,.work-card,.stat,.format,.service,.plan,.brief-box,.cta-box,.hero-card,.enterprise-offer,.player-shell,.btn,.langs,.mobile-langs,.chips span,.control-btn,.close,.footer-pill';
 document.querySelectorAll(q).forEach(el=>{el.classList.add('atrium-glass-v2');el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--gx',(((e.clientX-r.left)/r.width)*100).toFixed(1)+'%');el.style.setProperty('--gy',(((e.clientY-r.top)/r.height)*100).toFixed(1)+'%')},{passive:true});el.addEventListener('pointerleave',()=>{el.style.removeProperty('--gx');el.style.removeProperty('--gy')},{passive:true})})})();
 </script>
+<script>
+/* Build a real styled thumbnail asset for every portfolio video */
+document.querySelectorAll('.work-card').forEach(card=>{
+  const btn=card.querySelector('.play-ui');
+  const img=card.querySelector('.poster');
+  const titleEl=card.querySelector('.copy h3');
+  const brandEl=card.querySelector('.copy .eyebrow');
+  if(!btn||!img)return;
+  const id=btn.dataset.video;
+  const title=(titleEl?.textContent||btn.dataset.title||'Projeto').trim();
+  const brand=(brandEl?.textContent||'Atrium Visual').trim();
+  const fallback=img.src;
+  img.onerror=()=>{img.onerror=null;img.src=fallback};
+  img.src='/api/thumb?id='+encodeURIComponent(id)+'&title='+encodeURIComponent(title)+'&brand='+encodeURIComponent(brand);
+});</script>
 </body></html>
