@@ -878,6 +878,41 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
 .work-card .poster{filter:none!important;transform:none!important}
 .work-card:hover .poster{filter:saturate(1.04) contrast(1.02)!important;transform:scale(1.018)!important}
 
+
+/* STATIC ATRIUM THUMBNAILS — real WebP assets committed to the site */
+.work-card .copy{
+  display:block!important;
+  position:absolute!important;
+  inset:auto 0 0 0!important;
+  padding:86px 28px 27px!important;
+  background:linear-gradient(180deg,transparent 0%,rgba(2,4,7,.25) 22%,rgba(2,4,7,.78) 58%,rgba(2,4,7,.94) 100%)!important;
+  z-index:6!important;
+  pointer-events:none!important;
+}
+.work-card .copy::before{
+  content:"ATRIUM VISUAL";
+  display:block;
+  margin-bottom:13px;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.30em;
+  color:rgba(238,244,248,.78);
+}
+.work-card .copy .eyebrow{display:block!important;color:#efbc63!important}
+.work-card .copy h3{display:block!important;color:#f7f3ec!important}
+.work-card .copy p{display:none!important}
+.work-card .copy .chips{display:flex!important}
+.work-card .media::before{display:none!important}
+.work-card .media::after{
+  background:linear-gradient(180deg,rgba(0,0,0,.015),rgba(0,0,0,.05) 55%,rgba(0,0,0,.30))!important;
+}
+.work-card .poster{filter:none!important;transform:none!important}
+.work-card:hover .poster{filter:saturate(1.04) contrast(1.02)!important;transform:scale(1.018)!important}
+@media(max-width:760px){
+  .work-card .copy{padding:76px 20px 21px!important}
+  .work-card .copy::before{font-size:6.5px;margin-bottom:10px}
+}
+
 </style>
 </head>
 <body>
@@ -1101,4 +1136,31 @@ document.querySelectorAll('.work-card').forEach(card=>{
   img.onerror=()=>{img.onerror=null;img.src=fallback};
   img.src='/api/thumb?id='+encodeURIComponent(id)+'&title='+encodeURIComponent(title)+'&brand='+encodeURIComponent(brand);
 });</script>
+<script>
+/* Static Atrium thumbnails */
+(()=> {
+  const thumbs={
+    "1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP":"/assets/thumbs/salon-cereja.webp",
+    "1Gbh9PaNkOyD99Iv41HTKZ-UOFZjHEUb7":"/assets/thumbs/salon-cachos.webp",
+    "1CCrJmTGxYEG5Z4N-FvFVM0LW58YVvw_x":"/assets/thumbs/haier-geladeira.webp",
+    "1u7GEsYQ9VXK1G9_bqNn82aDSy5714M54":"/assets/thumbs/haier-casa.webp",
+    "1ysOOigGUm1V6wtwtHaH1E2-puU1sh1J7":"/assets/thumbs/tecno-motion.webp",
+    "1eIJWuYvwjq50g4gbMSG3zJ8moG_UY8s8":"/assets/thumbs/tecno-life.webp",
+    "1JqPWPtba6G9XoJ8jByjkAaoUwbOZvmjc":"/assets/thumbs/tecno-spark50.webp",
+    "10JJnhOfIJKDadFhXjM9rJXlAd72uMVge":"/assets/thumbs/orabar-bebe.webp",
+    "1-iwzKFqRSB365xAolHARJ0quTHNpJWVH":"/assets/thumbs/orabar-oldwoman.webp",
+    "1bjPxk8huPaLV7Og_H0KwEpGrLpxc2xGy":"/assets/thumbs/orabar-orawater.webp",
+    "1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W":"/assets/thumbs/vsl-cafe.webp",
+    "1SMIUIOrMrrSTKmj9KiSIMfbH0avqj_DW":"/assets/thumbs/vsl-tdah.webp",
+    "10iB9DfL159jgB5xic-FKkErRV-kHbo-6":"/assets/thumbs/vsl-kgen3.webp",
+    "15_9_fhK5nu1tmkzX3Fbu4ReUL4RH7bRJ":"/assets/thumbs/vsl-kgen5.webp",
+    "1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm":"/assets/thumbs/social-dopamina.webp",
+    "1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2":"/assets/thumbs/social-espelho.webp"
+  };
+  document.querySelectorAll('.work-card').forEach(card=>{
+    const btn=card.querySelector('.play-ui'),img=card.querySelector('.poster');
+    if(btn&&img&&thumbs[btn.dataset.video]) img.src=thumbs[btn.dataset.video];
+  });
+})();
+</script>
 </body></html>
