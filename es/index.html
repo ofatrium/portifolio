@@ -261,6 +261,82 @@ header{
   .player-shell{backdrop-filter:blur(20px) saturate(122%)!important;-webkit-backdrop-filter:blur(20px) saturate(122%)!important}
 }
 
+
+/* ATRIUM GLASS SYSTEM V2 — blue upper rim + amber lower glow */
+:root{
+  --atrium-bg:#030509;
+  --atrium-glass:rgba(10,17,25,.52);
+  --atrium-glass-strong:rgba(9,15,23,.72);
+  --atrium-blue:rgba(111,211,255,.88);
+  --atrium-blue-soft:rgba(111,211,255,.22);
+  --atrium-amber:rgba(255,178,76,.92);
+  --atrium-amber-soft:rgba(255,178,76,.24);
+}
+.atrium-glass-v2{
+  position:relative;
+  isolation:isolate;
+  border:1px solid transparent!important;
+  background:
+    linear-gradient(180deg,rgba(16,27,39,.62),rgba(7,11,17,.72)) padding-box,
+    linear-gradient(155deg,rgba(223,247,255,.82) 0%,var(--atrium-blue) 17%,rgba(255,255,255,.10) 48%,rgba(255,202,125,.38) 73%,var(--atrium-amber) 100%) border-box!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 18px 0 30px -25px rgba(102,218,255,.55),
+    inset -16px 0 28px -25px rgba(255,183,77,.38),
+    inset 0 -20px 34px -28px rgba(255,173,64,.60),
+    0 24px 64px rgba(0,0,0,.42),
+    0 0 22px rgba(97,205,255,.045),
+    0 10px 28px rgba(255,165,60,.035)!important;
+  backdrop-filter:blur(22px) saturate(128%)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(128%)!important;
+  transition:transform .28s ease,box-shadow .28s ease,filter .28s ease!important;
+}
+.atrium-glass-v2::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:2;
+  background:
+    radial-gradient(circle at var(--gx,22%) var(--gy,12%),rgba(255,255,255,.18),transparent 20%),
+    radial-gradient(ellipse at 50% 103%,rgba(255,174,66,.32),transparent 30%),
+    linear-gradient(180deg,rgba(190,235,255,.075),transparent 26%,transparent 72%,rgba(255,180,74,.075));
+  mix-blend-mode:screen;
+  opacity:.95;
+}
+.atrium-glass-v2:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 18px 0 32px -24px rgba(102,218,255,.68),
+    inset -16px 0 30px -24px rgba(255,183,77,.46),
+    inset 0 -20px 36px -27px rgba(255,173,64,.72),
+    0 30px 76px rgba(0,0,0,.48),
+    0 0 28px rgba(97,205,255,.07),
+    0 14px 34px rgba(255,165,60,.06)!important;
+}
+.work-card.atrium-glass-v2,.plan.atrium-glass-v2,.service.atrium-glass-v2,.format.atrium-glass-v2,.stat.atrium-glass-v2,.brief-box.atrium-glass-v2,.cta-box.atrium-glass-v2,.hero-card.atrium-glass-v2,.enterprise-offer.atrium-glass-v2,.player-shell.atrium-glass-v2{border-radius:32px!important}
+.btn.atrium-glass-v2,.langs.atrium-glass-v2,.mobile-langs.atrium-glass-v2,.chip.atrium-glass-v2,.chips span.atrium-glass-v2,.control-btn.atrium-glass-v2,.close.atrium-glass-v2{
+  border-radius:999px!important;
+  background:
+    linear-gradient(180deg,rgba(22,31,42,.62),rgba(8,12,18,.72)) padding-box,
+    linear-gradient(145deg,rgba(220,246,255,.72),rgba(98,206,255,.48) 25%,rgba(255,255,255,.08) 55%,rgba(255,181,76,.68)) border-box!important;
+}
+.atrium-footer{padding:28px 0 38px;border-top:1px solid rgba(255,255,255,.065);position:relative;z-index:3}
+.atrium-footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.atrium-footer-links{display:flex;gap:10px;flex-wrap:wrap}
+.footer-pill{display:inline-flex;align-items:center;gap:9px;padding:10px 14px;border-radius:999px;color:#d9e0e8;font-size:13px;text-decoration:none}
+.footer-pill svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px rgba(111,211,255,.14)) drop-shadow(0 0 4px rgba(255,178,76,.10))}
+.footer-pill .arrow{opacity:.72;font-size:12px}
+.atrium-footer-meta{font-size:12px;line-height:1.55;color:#7f8896;text-align:right}
+@media(max-width:640px){
+  .work-card.atrium-glass-v2,.plan.atrium-glass-v2,.service.atrium-glass-v2,.format.atrium-glass-v2,.stat.atrium-glass-v2,.brief-box.atrium-glass-v2,.cta-box.atrium-glass-v2,.hero-card.atrium-glass-v2,.enterprise-offer.atrium-glass-v2{border-radius:27px!important}
+  .atrium-footer-row{align-items:flex-start}
+  .atrium-footer-meta{text-align:left;width:100%}
+  .footer-pill{font-size:12px;padding:9px 12px}
+}
+
 </style></head><body><div class="noise"></div><div class="cursor-light" id="cursorLight"></div>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><nav class="navlinks"><a href="#formatos">Formatos</a><a href="#servicos">Servicios</a><a href="#metodo">Método</a><a href="#planos">Planes</a><a href="/portfolio/es/">Portafolio</a></nav><div class="header-actions"><div class="langs"><a class="" href="/">PT-BR</a><a class="" href="/en/">EN</a><a class="active" href="/es/">ES</a></div><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Empezar proyecto ↗</a></div></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">PRODUCCIÓN AUDIOVISUAL + IA + DIRECCIÓN HUMANA</div><h1>Tienes la<br>idea.<br>Yo hago que<br><span class="grad">cobre vida.</span></h1><p>Edición, IA y dirección creativa para UGC, VSL, Reels, bodas, contenido de marca y campañas que necesitan captar atención sin parecer más de lo mismo.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Quiero dar vida a mi idea ↗</a><a class="btn" href="/portfolio/es/">Ver lo que produzco ↓</a></div><div class="clients"><span class="pill">Salon Line</span><span class="pill">Swiss Move</span><span class="pill">Healer</span><span class="pill">WE Travel UK</span><span class="pill">Workana</span></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter"><small>CREATIVE SYSTEM</small><strong>IDEIA</strong><i>→</i><strong>EXPERIÊNCIA</strong><div style="font-size:7px;letter-spacing:.22em;color:#676e79;margin-top:26px">EDITORIAL · UGC · CINEMA · PERFORMANCE</div></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats"><div class="stat glass refract reveal" data-tilt><b>2 años</b><span>en pipelines con IA</span></div><div class="stat glass refract reveal" data-tilt><b>9:16</b><span>listo para redes</span></div><div class="stat glass refract reveal" data-tilt><b>2</b><span>revisiones por video</span></div><div class="stat glass refract reveal" data-tilt><b>1 min</b><span>para un briefing rápido</span></div></div></div></section>
@@ -272,10 +348,19 @@ header{
 <section class="section"><div class="wrap about"><div class="portrait glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/osires.jpg" alt="Osires — Atrium Visual"><div class="badge"><b>ATRIUM VISUAL</b><span>Direção + Edição + IA</span></div></div><div class="reveal"><div class="label">Quién está detrás</div><h2>Soy Osires.</h2><p>Soy la persona con la que hablas sobre tu idea. Desde la primera referencia hasta el último ajuste, la mirada humana dirige lo que creamos.</p><div class="chips"><span class="chip">Mobile-first</span><span class="chip">IA aplicada</span><span class="chip">Direção criativa</span><span class="chip">Atendimento direto</span></div><a class="btn" href="https://wa.me/5524974056237" target="_blank">Hablemos de tu proyecto ↗</a></div></div></section>
 <section class="section"><div class="wrap"><div class="brief-box glass refract reveal" data-tilt><div class="brief-grid"><div class="brief"><div class="label">Briefing rápido</div><h2>Cuéntame tu idea. Te muestro el camino.</h2><p>Completa lo básico. El botón abre WhatsApp con todo organizado para empezar sin vueltas.</p><div class="contactline">WhatsApp · +55 24 97405-6237<br>E-mail · ofatrium@gmail.com<br>Brasil · Atención internacional</div></div><form class="form" id="briefForm"><input class="field" id="name" placeholder="¿Cómo podemos llamarte?"><select class="field" id="type"><option value="">¿Qué quieres producir?</option><option>Video con IA</option><option>UGC / VSL</option><option>Reels / Social</option><option>Campaña</option><option>Otro</option></select><select class="field" id="qty"><option value="">Cantidad aproximada</option><option>1 video</option><option>2–5 videos</option><option>6–10 videos</option><option>Más de 10</option></select><button class="btn primary" type="submit">Recibir orientación por WhatsApp ↗</button><small>Sin compromiso. Hablas directamente con Osires.</small></form></div></div></div></section>
 <section class="cta"><div class="wrap"><div class="cta-box glass refract reveal" data-tilt><div class="cta-row"><div><div class="label">Una conversación. Muchas posibilidades.</div><h2>Tu próximo video empieza aquí.</h2><p>Apunta la cámara o toca el código QR.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">WhatsApp ↗</a><a class="btn" href="/portfolio/es/">Portafolio ↗</a></div></div><a href="https://wa.me/5524974056237" target="_blank"><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACg0lEQVR4nO2aTW7bMBCFvykFeCkDOYCPIt0sV5OO0htIywAUXhdDyoqLFgkiqxE6Wtj6+RYPeHjkDEkTn7nGH5/CIfjggw8++OCD/xNv5WpgtAbr5wZgMevn+q0/UE/we/GN/3UDwPwCnUCQMUiCOWUA7Bg9wT+Hn2tCx2tJrYbWncWDfaye4J/Edz8vYrxJ9jotdVT+h3qC/xLfPL4Ye0wAgiQ7Wk/w+/LV31bADAYpA8vG+O0SyHfTH/yH+NHMzK5AN4H180V0UxKwePl8rJ7gd+I9pveEinkxjbc3Y7xlSrCP0xP8vjySJDplNJAEbUaaUs1vmx3xa/hu+oP/GD83QPtm7qrn9woa5osYr2D9oXqC34cv+aWVj8P3rlfD+8fI7xn56i/JB2m6KUlDK9G5pdlrrvD3lPw6uZb51yfhbqI8yu3OuN3h78n4Wl9NcC+tNKxfh1bbK/w9K58E80Vmt+yP0pRkPYt5d9wfqyf4Xfi1vso8zLpeX+l9kxT5PRm/js9J0rS+baUy/652h79n5N/VV22mJBm8kn4sp8Pfk/Gb9St8EgZKkmtPXBqn8Pe0vIa54d4GAUka5obaKR2sJ/i9+G1/tA7I2+VoyoeYf0/JbzcP1kr6vmDlcXb3w98T8r4/WHd3UxYsQCuMdgLmlwxtbnSMnuCfwnvXO4HZNQlmMw0s5nEe7SLrj9QT/M58PT9ZXZXsdUpiNLM6HR+pJ/h9+MfzdUbrp3IajdepvBwtZfMj0t9Nf/Cf4z2mvqHvPZP0N/7ZeoL/Gr8pk33raP2h7AnX0zvRH52RX/f3Aer5q3uTVO7C37Pyv5+fLE/rDSXJx+gJPvjggw8++P+B/wUlZP9UE1rVbgAAAABJRU5ErkJggg==" alt="WhatsApp QR Code"></a></div></div></div></section></main>
-<footer><div class="wrap footer"><div><strong>Λ ATRIUM VISUAL</strong><br>Videos que transforman atención en resultados.</div><div><a href="https://instagram.com/osiresvisual" target="_blank">Instagram ↗</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ofatrium%40gmail.com&su=Proyecto%20-%20Atrium%20Visual&body=Hola%2C%20Osires!%20Me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto." target="_blank" rel="noopener">E-mail ↗</a><a href="https://wa.me/5524974056237" target="_blank">WhatsApp ↗</a><br><span>Brasil · Atención internacional · © 2026 Atrium Visual</span></div></div></footer>
+<footer class="atrium-footer"><div class="wrap atrium-footer-row"><div class="atrium-footer-links">
+<a class="footer-pill" href="https://instagram.com/osiresvisual" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".8"/></svg><span>Instagram</span><span class="arrow">↗</span></a>
+<a class="footer-pill" href="https://mail.google.com/mail/?view=cm&fs=1&to=ofatrium%40gmail.com&su=Proyecto%20-%20Atrium%20Visual&body=Hola%2C%20Osires!%20Me%20gustar%C3%ADa%20hablar%20sobre%20un%20proyecto." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 6.5h16v11H4z"/><path d="m4 7 8 6 8-6"/></svg><span>E-mail</span><span class="arrow">↗</span></a>
+<a class="footer-pill" href="https://wa.me/5524974056237" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.7z"/><path d="M9 8.6c.5 2.7 2.2 4.5 4.9 5.5"/></svg><span>WhatsApp</span><span class="arrow">↗</span></a>
+</div><div class="atrium-footer-meta"><strong style="color:#c8ced7">Λ ATRIUM VISUAL</strong><br>Brasil · Atención internacional · © 2026 Atrium Visual</div></div></footer>
 <script>
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 if(!reduced){const glow=document.getElementById('cursorLight');let gx=innerWidth*.7,gy=innerHeight*.2,tx=gx,ty=gy;addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY});const tick=()=>{gx+=(tx-gx)*.075;gy+=(ty-gy)*.075;if(glow){glow.style.left=gx+'px';glow.style.top=gy+'px'}requestAnimationFrame(tick)};tick();document.querySelectorAll('[data-tilt]').forEach(el=>{el.addEventListener('pointermove',e=>{if(innerWidth<900)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.setProperty('--mx',Math.round(x*105));el.style.setProperty('--my',Math.round(y*75));el.style.transform='perspective(1100px) rotateX('+(-y*2.8)+'deg) rotateY('+(x*3.8)+'deg) translateY(-6px)'});el.addEventListener('pointerleave',()=>{el.style.transform='';el.style.setProperty('--mx',0);el.style.setProperty('--my',0)})})}
 document.getElementById('briefForm')?.addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value||'Olá';const ty=document.getElementById('type').value||'projeto audiovisual';const q=document.getElementById('qty').value||'a definir';window.open('https://wa.me/5524974056237?text='+encodeURIComponent(n+' — '+ty+' — '+q),'_blank')});
-</script></body></html>
+</script><script>
+/* Atrium reactive glass */
+(()=>{const q='.glass,.work-card,.stat,.format,.service,.plan,.brief-box,.cta-box,.hero-card,.enterprise-offer,.player-shell,.btn,.langs,.mobile-langs,.chips span,.control-btn,.close,.footer-pill';
+document.querySelectorAll(q).forEach(el=>{el.classList.add('atrium-glass-v2');el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--gx',(((e.clientX-r.left)/r.width)*100).toFixed(1)+'%');el.style.setProperty('--gy',(((e.clientY-r.top)/r.height)*100).toFixed(1)+'%')},{passive:true});el.addEventListener('pointerleave',()=>{el.style.removeProperty('--gx');el.style.removeProperty('--gy')},{passive:true})})})();
+</script>
+</body></html>
