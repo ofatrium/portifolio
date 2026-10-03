@@ -530,6 +530,192 @@ header{
   .work-card .media::before{top:12px;right:13px;font-size:6.5px}
 }
 
+
+/* ATRIUM GLASS V4 — cleaner cards, no inner pane, restrained idle glow */
+.atrium-glass-v2{
+  border:1.15px solid transparent!important;
+  background:
+    linear-gradient(180deg,rgba(8,16,25,.66),rgba(5,8,13,.74)) padding-box,
+    linear-gradient(150deg,
+      rgba(225,248,255,.84) 0%,
+      rgba(93,207,250,.78) 15%,
+      rgba(255,255,255,.09) 48%,
+      rgba(255,196,112,.34) 74%,
+      rgba(255,168,53,.78) 100%) border-box!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    inset 14px 0 24px -22px rgba(79,208,255,.43),
+    inset -13px 0 24px -22px rgba(255,181,70,.34),
+    inset 0 -17px 28px -25px rgba(255,162,46,.42),
+    0 22px 54px rgba(0,0,0,.42),
+    0 -2px 12px rgba(78,203,255,.08),
+    0 10px 20px rgba(255,156,38,.07)!important;
+  filter:none!important;
+}
+/* remove the extra glass/refraction pane that was creating the rectangle */
+.atrium-glass-v2::before,
+.work-card::before,
+.hero-card::before,
+.refract::before{
+  display:none!important;
+}
+.atrium-glass-v2::after{
+  background:
+    radial-gradient(circle at var(--gx,18%) var(--gy,10%),rgba(255,255,255,.15),transparent 17%),
+    radial-gradient(ellipse at 50% 104%,rgba(255,168,46,.24),transparent 31%),
+    radial-gradient(ellipse at 18% -4%,rgba(75,205,255,.16),transparent 29%)!important;
+  opacity:.72!important;
+}
+.atrium-glass-v2:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 18px 0 30px -22px rgba(76,214,255,.72),
+    inset -17px 0 30px -22px rgba(255,184,75,.54),
+    inset 0 -23px 36px -24px rgba(255,164,45,.82),
+    0 32px 78px rgba(0,0,0,.50),
+    0 -4px 23px rgba(75,207,255,.25),
+    0 0 31px rgba(69,194,255,.13),
+    0 18px 37px rgba(255,157,38,.18)!important;
+}
+.atrium-glass-v2:hover::after{opacity:1!important}
+
+/* Portfolio cards are now the thumbnail itself — one continuous surface */
+.work-card{
+  overflow:hidden!important;
+  isolation:isolate;
+  min-height:0!important;
+}
+.work-card .media{
+  margin:0!important;
+  border:0!important;
+  border-radius:inherit!important;
+  box-shadow:none!important;
+}
+.work-card .media.portrait{aspect-ratio:4/5!important}
+.work-card .media.landscape{aspect-ratio:16/9!important}
+.work-card .media::before{
+  content:"ATRIUM VISUAL";
+  position:absolute;
+  z-index:4;
+  top:18px;
+  right:20px;
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.30em;
+  color:rgba(242,247,250,.76);
+  text-shadow:0 1px 12px rgba(0,0,0,.6);
+  pointer-events:none;
+}
+.work-card .media::after{
+  background:
+    linear-gradient(180deg,rgba(1,4,8,.03) 35%,rgba(2,4,8,.13) 55%,rgba(2,4,7,.82) 100%),
+    radial-gradient(ellipse at 52% 107%,rgba(255,168,48,.20),transparent 34%),
+    radial-gradient(ellipse at 15% -6%,rgba(76,206,255,.14),transparent 29%)!important;
+}
+.work-card .poster{
+  filter:saturate(1.02) contrast(1.045) brightness(.97)!important;
+}
+.work-card:hover .poster{
+  transform:scale(1.035)!important;
+  filter:saturate(1.09) contrast(1.055) brightness(1)!important;
+}
+/* title becomes part of the thumbnail instead of a second rectangle below */
+.work-card .copy{
+  position:absolute!important;
+  left:0;right:0;bottom:0;
+  z-index:5!important;
+  padding:52px 26px 25px!important;
+  background:linear-gradient(180deg,transparent,rgba(2,4,7,.78) 47%,rgba(2,4,7,.94))!important;
+  pointer-events:none;
+}
+.work-card .copy .eyebrow{
+  color:#efb65f!important;
+  font-size:9px!important;
+  letter-spacing:.18em!important;
+}
+.work-card .copy h3{
+  color:#f4f0e8!important;
+  font-size:clamp(22px,2.1vw,31px)!important;
+  line-height:1.02!important;
+  margin:7px 0 0!important;
+  max-width:88%;
+  text-shadow:0 3px 18px rgba(0,0,0,.65);
+}
+.work-card .copy p,
+.work-card .copy .chips{display:none!important}
+.work-card .play-copy,
+.work-card .play-word{display:none!important}
+.work-card .play-circle{
+  left:20px!important;
+  top:20px!important;
+  width:48px!important;
+  height:48px!important;
+  font-size:15px!important;
+  background:rgba(235,247,252,.88)!important;
+  border:1px solid rgba(255,255,255,.52)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.62),
+    0 0 0 1px rgba(75,204,255,.16),
+    0 7px 22px rgba(0,0,0,.32)!important;
+}
+.work-card:hover .play-circle{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.72),
+    0 0 0 1px rgba(75,204,255,.32),
+    0 0 19px rgba(75,204,255,.24),
+    0 8px 24px rgba(0,0,0,.38)!important;
+}
+
+/* quieter controls at rest; glow blooms on hover */
+.btn.atrium-glass-v2,.langs.atrium-glass-v2,.mobile-langs.atrium-glass-v2,.footer-pill.atrium-glass-v2{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.11),
+    0 8px 21px rgba(0,0,0,.28),
+    0 0 9px rgba(72,202,255,.07),
+    0 6px 12px rgba(255,160,45,.06)!important;
+}
+.btn.atrium-glass-v2:hover,.langs.atrium-glass-v2:hover,.mobile-langs.atrium-glass-v2:hover,.footer-pill.atrium-glass-v2:hover{
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.19),
+    0 10px 27px rgba(0,0,0,.33),
+    0 0 20px rgba(75,207,255,.22),
+    0 9px 23px rgba(255,160,43,.18)!important;
+}
+
+/* Mobile: same identity, less clutter, touch glow instead of hover */
+@media(max-width:640px){
+  .work-card .media.landscape{aspect-ratio:4/3!important}
+  .work-card .media::before{top:13px;right:14px;font-size:6px;letter-spacing:.25em}
+  .work-card .copy{padding:42px 18px 18px!important}
+  .work-card .copy h3{font-size:23px!important;max-width:90%}
+  .work-card .play-circle{left:14px!important;top:14px!important;width:44px!important;height:44px!important}
+  .atrium-glass-v2{
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.12),
+      inset 10px 0 21px -20px rgba(76,210,255,.38),
+      inset -10px 0 21px -20px rgba(255,181,70,.30),
+      inset 0 -14px 24px -22px rgba(255,163,47,.38),
+      0 18px 42px rgba(0,0,0,.40),
+      0 -2px 10px rgba(76,207,255,.08),
+      0 8px 16px rgba(255,160,43,.07)!important;
+  }
+  .atrium-glass-v2:active,
+  .work-card:focus-within{
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.20),
+      inset 14px 0 27px -20px rgba(76,214,255,.65),
+      inset -14px 0 27px -20px rgba(255,184,75,.48),
+      inset 0 -20px 31px -22px rgba(255,164,45,.72),
+      0 24px 56px rgba(0,0,0,.47),
+      0 -3px 18px rgba(75,207,255,.20),
+      0 14px 28px rgba(255,157,38,.16)!important;
+  }
+}
+@media(hover:none){
+  .atrium-glass-v2:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
