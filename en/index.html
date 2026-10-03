@@ -814,6 +814,49 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
   .home-capabilities .cap-track span:after{margin-left:34px}
 }
 
+
+/* HOME LAYOUT + WARM AMBIENT GLOW V7 */
+body{
+  background:
+    radial-gradient(920px 620px at 82% 14%,rgba(239,188,99,.13),transparent 60%),
+    radial-gradient(760px 520px at 92% 58%,rgba(215,139,50,.085),transparent 64%),
+    radial-gradient(980px 650px at 58% 18%,rgba(45,91,194,.12),transparent 62%),
+    linear-gradient(180deg,#050608 0%,#060912 54%,#090a0d 100%)!important;
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-10% -5%;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(ellipse at 82% 18%,rgba(239,188,99,.12),transparent 30%),
+    radial-gradient(ellipse at 74% 66%,rgba(209,132,41,.07),transparent 34%);
+  filter:blur(18px);
+}
+.hero>.wrap{position:relative;z-index:1}
+.hero-grid{width:100%;min-width:0}
+.hero-grid>*{min-width:0}
+.home-capabilities{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow:hidden!important;
+}
+.home-capabilities .cap-track{max-width:none;will-change:transform}
+@media(max-width:900px){
+  .hero-grid{width:100%;max-width:100%}
+  .hero::before{
+    background:
+      radial-gradient(ellipse at 72% 12%,rgba(239,188,99,.10),transparent 34%),
+      radial-gradient(ellipse at 82% 62%,rgba(209,132,41,.055),transparent 38%);
+  }
+}
+
 </style></head><body><div class="noise"></div><div class="cursor-light" id="cursorLight"></div>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><nav class="navlinks"><a href="#formatos">Formats</a><a href="#servicos">Services</a><a href="#metodo">Method</a><a href="#planos">Plans</a><a href="/portfolio/en/">Portfolio</a></nav><div class="header-actions"><div class="langs"><a class="" href="/">PT-BR</a><a class="active" href="/en/">EN</a><a class="" href="/es/">ES</a></div><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Start a project ↗</a></div></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">AUDIOVISUAL PRODUCTION + AI + HUMAN DIRECTION</div><h1>You have the<br>idea.<br>I make it<br><span class="grad">come alive.</span></h1><p>Editing, AI and creative direction for UGC, VSL, Reels, weddings, branded content and campaigns that need to hold attention without looking like everything else.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Bring my idea to life ↗</a><a class="btn" href="/portfolio/en/">See what I create ↓</a></div><div class="home-capabilities"><div class="cap-track"><span>CREATIVE DIRECTION</span><span>AI PRODUCTION</span><span>MOBILE CAPTURE</span><span>VIDEO EDITING</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>SOCIAL CONTENT</span><span>DIGITAL CAMPAIGNS</span><span>CREATIVE DIRECTION</span><span>AI PRODUCTION</span><span>MOBILE CAPTURE</span><span>VIDEO EDITING</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>SOCIAL CONTENT</span><span>DIGITAL CAMPAIGNS</span></div></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter"><small>CREATIVE SYSTEM</small><strong>IDEA</strong><i>→</i><strong>EXPERIENCE</strong><div style="font-size:7px;letter-spacing:.22em;color:#676e79;margin-top:26px">EDITORIAL · UGC · CINEMA · PERFORMANCE</div></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats"><div class="stat glass refract reveal" data-tilt><b>2 years</b><span>in AI pipelines</span></div><div class="stat glass refract reveal" data-tilt><b>9:16</b><span>ready for social</span></div><div class="stat glass refract reveal" data-tilt><b>2</b><span>revisions per video</span></div><div class="stat glass refract reveal" data-tilt><b>1 min</b><span>for a quick brief</span></div></div></div></section>
