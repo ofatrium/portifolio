@@ -938,7 +938,7 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
 }
 
 </style>
-</head>
+<link rel="preconnect" href="https://drive.usercontent.google.com" crossorigin>\n<link rel="dns-prefetch" href="//drive.usercontent.google.com">\n</head>
 <body>
 <div class="noise"></div><div class="bg-light" id="light"></div>
 <header><div class="wrap nav"><a class="brand" href="/"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><div class="mobile-langs"><a class="" href="/portfolio/">PT</a><a class="active" href="/portfolio/en/">EN</a><a class="" href="/portfolio/es/">ES</a></div>
@@ -1105,7 +1105,7 @@ function openPlayer(btn){
   video.playsInline=true;video.preload='metadata';video.autoplay=true;video.controls=false;
   video.src='/api/video?id='+encodeURIComponent(id);
   video.addEventListener('loadedmetadata',()=>{const l=stage.querySelector('.loading');if(l)l.remove();sync()});
-  video.addEventListener('canplay',()=>{const l=stage.querySelector('.loading');if(l)l.remove()});
+  video.addEventListener('canplay',()=>{const l=stage.querySelector('.loading');if(l)l.remove()});\n  video.addEventListener('playing',()=>{const l=stage.querySelector('.loading');if(l)l.remove()});\n  video.addEventListener('waiting',()=>{if(!stage.querySelector('.loading')){const l=document.createElement('div');l.className='loading';l.textContent='Carregando vídeo…';stage.appendChild(l)}});
   video.addEventListener('timeupdate',sync);video.addEventListener('play',sync);video.addEventListener('pause',sync);video.addEventListener('ended',sync);
   video.addEventListener('error',()=>{stage.innerHTML='<div class="fallback">The video could not be loaded.<br><a href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener">Open in Drive ↗</a></div>'});
   stage.appendChild(video);activeVideo=video;
