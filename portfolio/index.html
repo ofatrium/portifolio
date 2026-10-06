@@ -1107,6 +1107,28 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
   .quality-menu{bottom:48px;right:-2px}
 }
 
+
+/* MOBILE VIEWPORT FIX V3 */
+html,body{max-width:100%;overflow-x:hidden!important}
+body,main,header,footer,.section,.hero{width:100%;max-width:100vw}
+.wrap{max-width:100%;min-width:0}
+@supports(overflow:clip){html,body{overflow-x:clip!important}}
+@media(max-width:760px){
+  .catalog-shell{width:100%;max-width:100%;min-width:0;overflow:visible}
+  #salon .grid,#haier .grid,#tecno .grid,#orabar .grid,#vsl .grid,#social .grid{
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    padding-left:0!important;
+    padding-right:18vw!important;
+    box-sizing:border-box!important;
+    overscroll-behavior-x:contain;
+  }
+  header,.nav,.actions{max-width:100%!important;min-width:0!important}
+  .actions>.btn{max-width:46vw;overflow:hidden;text-overflow:ellipsis}
+}
+
 </style>
 <link rel="preconnect" href="https://drive.usercontent.google.com" crossorigin>\n<link rel="dns-prefetch" href="//drive.usercontent.google.com">\n</head>
 <body>
@@ -1253,12 +1275,76 @@ const modal=document.getElementById('modal'),shell=document.getElementById('play
 const playPause=document.getElementById('playPause'),timeline=document.getElementById('timeline'),timecode=document.getElementById('timecode'),qualityWrap=document.getElementById('qualityWrap'),qualityBtn=document.getElementById('qualityBtn'),qualityMenu=document.getElementById('qualityMenu'),fullscreenBtn=document.getElementById('fullscreenBtn');
 let activeVideo=null,activeId=null,activeSources=null;
 const QUALITY_SOURCES={
-  "1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W":{
-    "720p":"1RT7cTllImgzdlghQjz8H69Yg5mKRX1gV",
-    "1080p":"18B09NmbSfwlgP2m_UryhVE48aa3Icbpm",
-    "Original":"1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W"
+  "1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP": {
+    "720p": "1Etxe_1tuB_dLOnU-sbXxpV4quJHfPH1g",
+    "Original": "1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP"
+  },
+  "1Gbh9PaNkOyD99Iv41HTKZ-UOFZjHEUb7": {
+    "720p": "1f47YViUva3Amo-z1zm7GsH5BZKJbqpRF",
+    "Original": "1Gbh9PaNkOyD99Iv41HTKZ-UOFZjHEUb7"
+  },
+  "1CCrJmTGxYEG5Z4N-FvFVM0LW58YVvw_x": {
+    "720p": "1WBjrRL2-cDP_-lYdtVi9HB0hrYmhC6nk",
+    "Original": "1CCrJmTGxYEG5Z4N-FvFVM0LW58YVvw_x"
+  },
+  "1u7GEsYQ9VXK1G9_bqNn82aDSy5714M54": {
+    "720p": "17g5UO9qoYRXhZQ6dYZfK3qkTpU-9_uZq",
+    "Original": "1u7GEsYQ9VXK1G9_bqNn82aDSy5714M54"
+  },
+  "1ysOOigGUm1V6wtwtHaH1E2-puU1sh1J7": {
+    "720p": "1pP35hzNrmGHCCjBHfn6Q40HzNri0z_zi",
+    "Original": "1ysOOigGUm1V6wtwtHaH1E2-puU1sh1J7"
+  },
+  "1eIJWuYvwjq50g4gbMSG3zJ8moG_UY8s8": {
+    "720p": "1e2SVNW3R6QFfocmASVFb2UzIkK3hKCry",
+    "Original": "1eIJWuYvwjq50g4gbMSG3zJ8moG_UY8s8"
+  },
+  "1JqPWPtba6G9XoJ8jByjkAaoUwbOZvmjc": {
+    "720p": "1n_g9VGqKaM95HY_3kaRXriSvbxZ5yc4j",
+    "Original": "1JqPWPtba6G9XoJ8jByjkAaoUwbOZvmjc"
+  },
+  "10JJnhOfIJKDadFhXjM9rJXlAd72uMVge": {
+    "720p": "1563iOQ8cilS2SLGRJkdrWXVRC0yASQCu",
+    "Original": "10JJnhOfIJKDadFhXjM9rJXlAd72uMVge"
+  },
+  "1-iwzKFqRSB365xAolHARJ0quTHNpJWVH": {
+    "720p": "13oRMAZXiOourJ8z6TRRn3QOIol7dJopu",
+    "Original": "1-iwzKFqRSB365xAolHARJ0quTHNpJWVH"
+  },
+  "1bjPxk8huPaLV7Og_H0KwEpGrLpxc2xGy": {
+    "720p": "192CDlQ_xfoIFL2_nvwIQXTOcv_yRU-Ib",
+    "Original": "1bjPxk8huPaLV7Og_H0KwEpGrLpxc2xGy"
+  },
+  "1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W": {
+    "720p": "1RT7cTllImgzdlghQjz8H69Yg5mKRX1gV",
+    "1080p": "18B09NmbSfwlgP2m_UryhVE48aa3Icbpm",
+    "Original": "1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W"
+  },
+  "1SMIUIOrMrrSTKmj9KiSIMfbH0avqj_DW": {
+    "720p": "1qAFbeBOhXskaMKJYdqwvJAxYO-me5FAX",
+    "Original": "1SMIUIOrMrrSTKmj9KiSIMfbH0avqj_DW"
+  },
+  "10iB9DfL159jgB5xic-FKkErRV-kHbo-6": {
+    "720p": "1AoQjndy5s3gwZRXtY1Xr1HOAEfr6danJ",
+    "Original": "10iB9DfL159jgB5xic-FKkErRV-kHbo-6"
+  },
+  "15_9_fhK5nu1tmkzX3Fbu4ReUL4RH7bRJ": {
+    "720p": "1UqL3Xh8otbRqM473ergAqz5qqzCiwYrU",
+    "Original": "15_9_fhK5nu1tmkzX3Fbu4ReUL4RH7bRJ"
+  },
+  "1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm": {
+    "720p": "1uV3lencYMc1wYE9lKoQGokMdDMrD5nny",
+    "Original": "1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm"
+  },
+  "1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2": {
+    "720p": "1gEQ3RqjLA-JGnh7Ans2pjjEYZKk0YrVS",
+    "Original": "1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2"
   }
 };
+function sourceUrl(sourceId){
+  if(sourceId===activeId)return '/api/video?id='+encodeURIComponent(sourceId);
+  return 'https://drive.usercontent.google.com/download?id='+encodeURIComponent(sourceId)+'&export=download&confirm=t';
+}
 const fmt=s=>{if(!Number.isFinite(s))return '0:00';const m=Math.floor(s/60),ss=Math.floor(s%60).toString().padStart(2,'0');return m+':'+ss};
 function sync(){
   if(!activeVideo)return;
@@ -1296,11 +1382,11 @@ function openPlayer(btn){
   stage.innerHTML='<div class="loading">Carregando vídeo…</div>';
   const video=document.createElement('video');
   video.playsInline=true;video.preload='metadata';video.autoplay=true;video.controls=false;
-  video.src='/api/video?id='+encodeURIComponent(activeSources[qualityBtn.dataset.quality]||id);
+  let currentSourceId=activeSources[qualityBtn.dataset.quality]||id;let proxyTried=false;video.src=sourceUrl(currentSourceId);
   video.addEventListener('loadedmetadata',()=>{const l=stage.querySelector('.loading');if(l)l.remove();sync()});
   video.addEventListener('canplay',()=>{const l=stage.querySelector('.loading');if(l)l.remove()});
   video.addEventListener('timeupdate',sync);video.addEventListener('play',sync);video.addEventListener('pause',sync);video.addEventListener('ended',sync);
-  video.addEventListener('error',()=>{stage.innerHTML='<div class="fallback">Não foi possível carregar o vídeo.<br><a href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener">Abrir no Drive ↗</a></div>'});
+  video.addEventListener('error',()=>{if(!proxyTried&&currentSourceId!==id){proxyTried=true;video.src='/api/video?id='+encodeURIComponent(currentSourceId);video.load();video.play().catch(()=>sync());return;}stage.innerHTML='<div class="fallback">Não foi possível carregar o vídeo.<br><a href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener">Abrir no Drive ↗</a></div>'});
   stage.appendChild(video);activeVideo=video;
   modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');
   video.play().catch(()=>sync());
@@ -1321,7 +1407,7 @@ qualityMenu.addEventListener('click',e=>{
   const t=activeVideo.currentTime||0,wasPaused=activeVideo.paused;
   qualityBtn.dataset.quality=q;
   [...qualityMenu.children].forEach(b=>b.classList.toggle('active',b.dataset.quality===q));
-  activeVideo.src='/api/video?id='+encodeURIComponent(sourceId);
+  currentSourceId=sourceId;proxyTried=false;activeVideo.src=sourceUrl(sourceId);
   activeVideo.load();
   activeVideo.addEventListener('loadedmetadata',()=>{
     if(Number.isFinite(activeVideo.duration))activeVideo.currentTime=Math.min(t,Math.max(0,activeVideo.duration-.1));
