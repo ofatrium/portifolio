@@ -25,6 +25,36 @@ const ALLOWED = new Set([
 "1RT7cTllImgzdlghQjz8H69Yg5mKRX1gV"
 ,
 "18B09NmbSfwlgP2m_UryhVE48aa3Icbpm"
+,
+"1Etxe_1tuB_dLOnU-sbXxpV4quJHfPH1g"
+,
+"1f47YViUva3Amo-z1zm7GsH5BZKJbqpRF"
+,
+"1WBjrRL2-cDP_-lYdtVi9HB0hrYmhC6nk"
+,
+"17g5UO9qoYRXhZQ6dYZfK3qkTpU-9_uZq"
+,
+"1pP35hzNrmGHCCjBHfn6Q40HzNri0z_zi"
+,
+"1e2SVNW3R6QFfocmASVFb2UzIkK3hKCry"
+,
+"1n_g9VGqKaM95HY_3kaRXriSvbxZ5yc4j"
+,
+"1563iOQ8cilS2SLGRJkdrWXVRC0yASQCu"
+,
+"13oRMAZXiOourJ8z6TRRn3QOIol7dJopu"
+,
+"192CDlQ_xfoIFL2_nvwIQXTOcv_yRU-Ib"
+,
+"1qAFbeBOhXskaMKJYdqwvJAxYO-me5FAX"
+,
+"1AoQjndy5s3gwZRXtY1Xr1HOAEfr6danJ"
+,
+"1UqL3Xh8otbRqM473ergAqz5qqzCiwYrU"
+,
+"1uV3lencYMc1wYE9lKoQGokMdDMrD5nny"
+,
+"1gEQ3RqjLA-JGnh7Ans2pjjEYZKk0YrVS"
 ]);
 
 export default async function handler(req, res) {
