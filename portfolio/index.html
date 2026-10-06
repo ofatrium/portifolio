@@ -962,6 +962,151 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
 @media(max-width:640px){
   .quality-select{font-size:10px;padding:8px 27px 8px 10px;min-width:78px}
 }
+
+/* ATRIUM CATALOG V1 — horizontal portfolio shelves */
+#salon .grid,#haier .grid,#tecno .grid,#orabar .grid,#vsl .grid,#social .grid{
+  display:flex!important;
+  gap:18px!important;
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding:8px 2px 18px;
+  margin:0;
+}
+#salon .grid::-webkit-scrollbar,#haier .grid::-webkit-scrollbar,#tecno .grid::-webkit-scrollbar,#orabar .grid::-webkit-scrollbar,#vsl .grid::-webkit-scrollbar,#social .grid::-webkit-scrollbar{display:none}
+#salon .work-card,#haier .work-card,#tecno .work-card,#orabar .work-card,#vsl .work-card,#social .work-card,
+#salon .work-card.wide,#haier .work-card.wide,#tecno .work-card.wide,#orabar .work-card.wide,#vsl .work-card.wide,#social .work-card.wide,
+#salon .work-card.narrow,#haier .work-card.narrow,#tecno .work-card.narrow,#orabar .work-card.narrow,#vsl .work-card.narrow,#social .work-card.narrow{
+  flex:0 0 clamp(285px,31vw,350px)!important;
+  width:auto!important;
+  min-width:0!important;
+  grid-column:auto!important;
+  scroll-snap-align:start;
+}
+.catalog-shell{position:relative}
+.catalog-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:18;
+  width:46px;height:46px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(8,11,16,.82);
+  color:#f5f0e7;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 14px 34px rgba(0,0,0,.38),0 0 16px rgba(239,188,99,.06);
+  opacity:.78;
+  transition:.25s ease;
+}
+.catalog-arrow:hover{opacity:1;transform:translateY(-50%) scale(1.06);border-color:rgba(239,188,99,.35);color:var(--gold)}
+.catalog-arrow.prev{left:-18px}
+.catalog-arrow.next{right:-18px}
+.catalog-arrow[disabled]{opacity:0;pointer-events:none}
+
+/* Premium thumbnail simplification: image first, only brand + title */
+.work-card .copy{display:none!important}
+.work-card .play-word{display:none!important}
+.work-card .play-copy{
+  display:block!important;
+  left:0!important;right:0!important;bottom:0!important;
+  padding:68px 22px 20px!important;
+  background:linear-gradient(180deg,transparent 0%,rgba(2,4,7,.38) 32%,rgba(2,4,7,.92) 78%,rgba(2,4,7,.98) 100%)!important;
+  pointer-events:none!important;
+}
+.work-card .play-copy small{
+  display:block!important;
+  margin:0 0 6px!important;
+  color:var(--gold)!important;
+  font-size:8px!important;
+  font-weight:900!important;
+  letter-spacing:.18em!important;
+  text-transform:uppercase!important;
+}
+.work-card .play-copy b{
+  display:block!important;
+  color:#f7f3ec!important;
+  font-size:20px!important;
+  line-height:1.05!important;
+  letter-spacing:-.03em!important;
+  max-width:86%;
+  text-shadow:0 3px 18px rgba(0,0,0,.72);
+}
+.work-card .media::after{
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.015) 44%,rgba(2,4,7,.08) 61%,rgba(2,4,7,.56) 100%)!important;
+}
+.work-card:hover{transform:translateY(-4px)}
+.work-card:hover .poster{transform:scale(1.025)!important}
+
+/* Player controls V2 — gear-only quality menu + visible fullscreen */
+.controls{
+  grid-template-columns:auto minmax(80px,1fr) auto auto auto!important;
+  overflow:visible!important;
+}
+.quality-select{display:none!important}
+.quality-wrap{position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.quality-wrap[hidden]{display:none!important}
+.quality-gear{font-size:18px!important;line-height:1}
+.quality-menu{
+  position:absolute;
+  right:0;
+  bottom:54px;
+  display:none;
+  min-width:108px;
+  padding:7px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  background:rgba(8,11,16,.96);
+  box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 22px rgba(239,188,99,.08);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  z-index:30;
+}
+.quality-menu.open{display:grid;gap:5px}
+.quality-option{
+  border:0;
+  border-radius:9px;
+  background:transparent;
+  color:#d9dfe8;
+  padding:9px 10px;
+  text-align:left;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+.quality-option:hover,.quality-option.active{background:rgba(239,188,99,.10);color:var(--gold)}
+#fullscreenBtn{display:grid!important;visibility:visible!important;opacity:1!important;flex:0 0 44px}
+@media(max-width:760px){
+  #salon .work-card,#haier .work-card,#tecno .work-card,#orabar .work-card,#vsl .work-card,#social .work-card{
+    flex-basis:min(78vw,320px)!important;
+  }
+  .catalog-arrow{display:none!important}
+  #salon .grid,#haier .grid,#tecno .grid,#orabar .grid,#vsl .grid,#social .grid{
+    margin-right:calc((100vw - min(var(--max),calc(100% - 24px)))/-2);
+    padding-right:20vw;
+  }
+  .work-card .play-copy{padding:56px 17px 17px!important}
+  .work-card .play-copy b{font-size:18px!important}
+  .controls{
+    height:66px!important;
+    flex-basis:66px!important;
+    grid-template-columns:auto minmax(48px,1fr) auto auto auto!important;
+    gap:8px!important;
+    padding:0 10px!important;
+  }
+  .control-btn{width:40px!important;height:40px!important}
+  .timecode{min-width:68px!important;font-size:10px!important}
+  .quality-menu{bottom:48px;right:-2px}
+}
+
 </style>
 <link rel="preconnect" href="https://drive.usercontent.google.com" crossorigin>\n<link rel="dns-prefetch" href="//drive.usercontent.google.com">\n</head>
 <body>
@@ -1097,7 +1242,7 @@ button:hover,.btn:hover,.footer-pill:hover,.langs a:hover,.mobile-langs a:hover{
 <a class="footer-pill" href="https://wa.me/5524974056237" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20 11.7a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.7z"/><path d="M9 8.6c.5 2.7 2.2 4.5 4.9 5.5"/></svg><span>WhatsApp</span><span class="arrow">↗</span></a>
 </div><div class="atrium-footer-meta"><strong style="color:#c8ced7">Λ ATRIUM VISUAL</strong><br>Brasil · Atendimento internacional · © 2026 Atrium Visual</div></div></footer>
 
-<div class="modal" id="modal" aria-hidden="true"><div class="player-shell landscape glass" id="playerShell"><div class="player-bar"><b id="playerTitle">Atrium Visual</b><button class="close" id="closePlayer" type="button">✕</button></div><div class="stage" id="stage"></div><div class="controls"><button class="control-btn" id="playPause" type="button" aria-label="Reproduzir">▶</button><input class="timeline" id="timeline" type="range" min="0" max="1000" value="0" aria-label="Timeline"><span class="timecode" id="timecode">0:00 / 0:00</span><select class="quality-select" id="qualitySelect" aria-label="Qualidade do vídeo"></select><button class="control-btn" id="fullscreenBtn" type="button" aria-label="Tela cheia">⛶</button></div></div></div>
+<div class="modal" id="modal" aria-hidden="true"><div class="player-shell landscape glass" id="playerShell"><div class="player-bar"><b id="playerTitle">Atrium Visual</b><button class="close" id="closePlayer" type="button">✕</button></div><div class="stage" id="stage"></div><div class="controls"><button class="control-btn" id="playPause" type="button" aria-label="Reproduzir">▶</button><input class="timeline" id="timeline" type="range" min="0" max="1000" value="0" aria-label="Timeline"><span class="timecode" id="timecode">0:00 / 0:00</span><div class="quality-wrap" id="qualityWrap"><button class="control-btn quality-gear" id="qualityBtn" type="button" aria-label="Qualidade" aria-expanded="false">⚙</button><div class="quality-menu" id="qualityMenu" role="menu"></div></div><button class="control-btn" id="fullscreenBtn" type="button" aria-label="Tela cheia">⛶</button></div></div></div>
 
 <script>
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1105,7 +1250,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 
 const modal=document.getElementById('modal'),shell=document.getElementById('playerShell'),stage=document.getElementById('stage'),title=document.getElementById('playerTitle');
-const playPause=document.getElementById('playPause'),timeline=document.getElementById('timeline'),timecode=document.getElementById('timecode'),qualitySelect=document.getElementById('qualitySelect'),fullscreenBtn=document.getElementById('fullscreenBtn');
+const playPause=document.getElementById('playPause'),timeline=document.getElementById('timeline'),timecode=document.getElementById('timecode'),qualityWrap=document.getElementById('qualityWrap'),qualityBtn=document.getElementById('qualityBtn'),qualityMenu=document.getElementById('qualityMenu'),fullscreenBtn=document.getElementById('fullscreenBtn');
 let activeVideo=null,activeId=null,activeSources=null;
 const QUALITY_SOURCES={
   "1oNcEvl6DoUN2lOMxdtHeESlkEvQd0-4W":{
@@ -1125,22 +1270,33 @@ function sync(){
 }
 function closePlayer(){
   if(activeVideo){activeVideo.pause();activeVideo.removeAttribute('src');activeVideo.load()}
-  activeVideo=null;activeId=null;activeSources=null;stage.innerHTML='';timeline.value=0;timecode.textContent='0:00 / 0:00';playPause.textContent='▶';qualitySelect.innerHTML='';
+  activeVideo=null;activeId=null;activeSources=null;stage.innerHTML='';timeline.value=0;timecode.textContent='0:00 / 0:00';playPause.textContent='▶';qualityMenu.innerHTML='';qualityMenu.classList.remove('open');qualityBtn.setAttribute('aria-expanded','false');
   modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');
 }
 function openPlayer(btn){
   const id=btn.dataset.video,orientation=btn.dataset.orientation||'landscape';
   activeId=id;activeSources=QUALITY_SOURCES[id]||{"Original":id};
-  qualitySelect.innerHTML='';
-  Object.keys(activeSources).forEach(label=>{const o=document.createElement('option');o.value=label;o.textContent=label;qualitySelect.appendChild(o)});
-  qualitySelect.disabled=Object.keys(activeSources).length===1;
-  qualitySelect.value=activeSources["720p"]?"720p":Object.keys(activeSources)[0];
+  qualityMenu.innerHTML='';
+  const available=Object.keys(activeSources).filter(label=>label!=="Original");
+  if(available.length){
+    available.forEach(label=>{
+      const b=document.createElement('button');
+      b.type='button';b.className='quality-option';b.dataset.quality=label;b.textContent=label;
+      qualityMenu.appendChild(b);
+    });
+    qualityWrap.hidden=false;
+  }else{
+    qualityWrap.hidden=true;
+  }
+  const startQuality=activeSources["720p"]?"720p":(available[0]||"Original");
+  qualityBtn.dataset.quality=startQuality;
+  [...qualityMenu.children].forEach(b=>b.classList.toggle('active',b.dataset.quality===startQuality));
   shell.classList.remove('portrait','landscape');shell.classList.add(orientation);
   title.textContent=btn.dataset.title||'Atrium Visual';
   stage.innerHTML='<div class="loading">Carregando vídeo…</div>';
   const video=document.createElement('video');
   video.playsInline=true;video.preload='metadata';video.autoplay=true;video.controls=false;
-  video.src='/api/video?id='+encodeURIComponent(activeSources[qualitySelect.value]);
+  video.src='/api/video?id='+encodeURIComponent(activeSources[qualityBtn.dataset.quality]||id);
   video.addEventListener('loadedmetadata',()=>{const l=stage.querySelector('.loading');if(l)l.remove();sync()});
   video.addEventListener('canplay',()=>{const l=stage.querySelector('.loading');if(l)l.remove()});
   video.addEventListener('timeupdate',sync);video.addEventListener('play',sync);video.addEventListener('pause',sync);video.addEventListener('ended',sync);
@@ -1152,12 +1308,31 @@ function openPlayer(btn){
 document.querySelectorAll('.play-ui').forEach(btn=>btn.addEventListener('click',()=>openPlayer(btn)));
 playPause.addEventListener('click',()=>{if(!activeVideo)return;activeVideo.paused?activeVideo.play():activeVideo.pause()});
 timeline.addEventListener('input',()=>{if(!activeVideo||!Number.isFinite(activeVideo.duration))return;activeVideo.currentTime=(Number(timeline.value)/1000)*activeVideo.duration});
-qualitySelect.addEventListener('change',()=>{
-  if(!activeVideo||!activeSources)return;
-  const t=activeVideo.currentTime||0,wasPaused=activeVideo.paused,sourceId=activeSources[qualitySelect.value];
+qualityBtn.addEventListener('click',e=>{
+  e.stopPropagation();
+  const open=qualityMenu.classList.toggle('open');
+  qualityBtn.setAttribute('aria-expanded',open?'true':'false');
+});
+qualityMenu.addEventListener('click',e=>{
+  const opt=e.target.closest('.quality-option');
+  if(!opt||!activeVideo||!activeSources)return;
+  const q=opt.dataset.quality,sourceId=activeSources[q];
+  if(!sourceId||qualityBtn.dataset.quality===q){qualityMenu.classList.remove('open');qualityBtn.setAttribute('aria-expanded','false');return}
+  const t=activeVideo.currentTime||0,wasPaused=activeVideo.paused;
+  qualityBtn.dataset.quality=q;
+  [...qualityMenu.children].forEach(b=>b.classList.toggle('active',b.dataset.quality===q));
   activeVideo.src='/api/video?id='+encodeURIComponent(sourceId);
   activeVideo.load();
-  activeVideo.addEventListener('loadedmetadata',()=>{if(Number.isFinite(activeVideo.duration))activeVideo.currentTime=Math.min(t,Math.max(0,activeVideo.duration-.1));if(!wasPaused)activeVideo.play().catch(()=>sync());sync()},{once:true});
+  activeVideo.addEventListener('loadedmetadata',()=>{
+    if(Number.isFinite(activeVideo.duration))activeVideo.currentTime=Math.min(t,Math.max(0,activeVideo.duration-.1));
+    if(!wasPaused)activeVideo.play().catch(()=>sync());
+    sync();
+  },{once:true});
+  qualityMenu.classList.remove('open');
+  qualityBtn.setAttribute('aria-expanded','false');
+});
+document.addEventListener('click',e=>{
+  if(!qualityWrap.contains(e.target)){qualityMenu.classList.remove('open');qualityBtn.setAttribute('aria-expanded','false')}
 });
 fullscreenBtn.addEventListener('click',()=>{if(!activeVideo)return;const target=shell;if(target.requestFullscreen){target.requestFullscreen()}else if(activeVideo.webkitEnterFullscreen){activeVideo.webkitEnterFullscreen()}});
 document.getElementById('closePlayer').addEventListener('click',closePlayer);
@@ -1204,5 +1379,26 @@ document.querySelectorAll(q).forEach(el=>{el.classList.add('atrium-glass-v2');el
 "15_9_fhK5nu1tmkzX3Fbu4ReUL4RH7bRJ":"https://drive.google.com/thumbnail?id=1QiHcAF-PS2aZvSdgQp5yMZwc-SzUpD6g&sz=w1600",
 "1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm":"https://drive.google.com/thumbnail?id=15C8zo14n_pozYxNhM6LCaQIpXDgaDTBq&sz=w1600",
 "1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2":"https://drive.google.com/thumbnail?id=1y4vGLh9BvVgQUb5li39ByKinO9YwKTSE&sz=w1600"};document.querySelectorAll('.work-card').forEach(card=>{const b=card.querySelector('.play-ui'),img=card.querySelector('.poster');if(b&&img&&thumbs[b.dataset.video])img.src=thumbs[b.dataset.video]})})();
+</script>
+<script>
+/* Atrium catalog shelves */
+document.querySelectorAll('#salon .grid,#haier .grid,#tecno .grid,#orabar .grid,#vsl .grid,#social .grid').forEach(track=>{
+  if(track.parentElement.classList.contains('catalog-shell'))return;
+  const shell=document.createElement('div');shell.className='catalog-shell';
+  track.parentNode.insertBefore(shell,track);shell.appendChild(track);
+  const prev=document.createElement('button'),next=document.createElement('button');
+  prev.type='button';next.type='button';
+  prev.className='catalog-arrow prev';next.className='catalog-arrow next';
+  prev.setAttribute('aria-label','Anterior');next.setAttribute('aria-label','Próximo');
+  prev.textContent='‹';next.textContent='›';
+  shell.append(prev,next);
+  const update=()=>{const max=track.scrollWidth-track.clientWidth-2;prev.disabled=track.scrollLeft<=2;next.disabled=track.scrollLeft>=max};
+  const amount=()=>Math.max(track.clientWidth*.82,300);
+  prev.addEventListener('click',()=>track.scrollBy({left:-amount(),behavior:'smooth'}));
+  next.addEventListener('click',()=>track.scrollBy({left:amount(),behavior:'smooth'}));
+  track.addEventListener('scroll',update,{passive:true});
+  addEventListener('resize',update,{passive:true});
+  requestAnimationFrame(update);
+});
 </script>
 </body></html>
