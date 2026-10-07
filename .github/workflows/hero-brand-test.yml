@@ -1,0 +1,73 @@
+name: Atrium hero brand motion test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hero-brand-test.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Apply premium brand motion hero
+        shell: python
+        run: |
+          from pathlib import Path
+
+          files = {
+            'index.html': ('IDEIA', 'EXPERIÊNCIA', 'TRANSFORMAR IDEIAS EM EXPERIÊNCIAS'),
+            'en/index.html': ('IDEA', 'EXPERIENCE', 'TURNING IDEAS INTO EXPERIENCES'),
+            'es/index.html': ('IDEA', 'EXPERIENCIA', 'CONVERTIR IDEAS EN EXPERIENCIAS'),
+          }
+
+          css = r'''
+          /* ATRIUM BRAND MOTION TEST V1 */
+          .brand-motion{position:relative;display:grid;place-items:center;min-height:300px;isolation:isolate;perspective:900px}
+          .brand-motion:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(120,170,255,.15),rgba(239,189,98,.07) 42%,transparent 70%);filter:blur(14px);animation:atriumAura 7s ease-in-out infinite;pointer-events:none}
+          .brand-motion .brand-symbol{position:relative;width:164px;height:164px;display:grid;place-items:center;transform-style:preserve-3d;animation:atriumFloat 7s cubic-bezier(.45,0,.35,1) infinite}
+          .brand-motion .brand-symbol:before{content:"Λ";font-size:142px;line-height:1;font-weight:300;letter-spacing:-.08em;background:linear-gradient(120deg,#f4efe5 3%,#a9d8ff 24%,#43556d 42%,#efbd62 67%,#fff0c9 86%,#8b6236 100%);background-size:220% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(-10px 10px 11px rgba(0,0,0,.52)) drop-shadow(0 0 22px rgba(239,189,98,.08));transform:rotateY(-7deg) rotateX(4deg);animation:atriumMetal 7s ease-in-out infinite}
+          .brand-motion .brand-symbol:after{content:"Λ";position:absolute;font-size:142px;line-height:1;font-weight:300;letter-spacing:-.08em;color:rgba(239,189,98,.13);transform:translate(8px,10px) rotateY(-7deg) rotateX(4deg);filter:blur(.2px);z-index:-1}
+          .brand-motion .brand-line{position:absolute;width:205px;height:1px;background:linear-gradient(90deg,transparent,rgba(122,174,255,.35),rgba(239,189,98,.62),transparent);bottom:31px;opacity:.72;box-shadow:0 0 20px rgba(239,189,98,.17)}
+          .brand-motion .brand-copy{position:absolute;left:50%;bottom:-7px;transform:translateX(-50%);width:max-content;max-width:95%;font-size:8px;font-weight:800;letter-spacing:.26em;color:#8e96a3;text-transform:uppercase}
+          .brand-motion .brand-idea{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:100%;opacity:0;pointer-events:none;animation:atriumMessage 7s ease-in-out infinite;text-align:center}
+          .brand-motion .brand-idea b{display:block;font-size:11px;letter-spacing:.34em;color:#a8b0bd;margin-bottom:10px}
+          .brand-motion .brand-idea strong{display:inline-flex;align-items:center;gap:12px;font-size:15px;letter-spacing:.08em;color:#f4efe5;font-weight:800}
+          .brand-motion .brand-idea i{font-style:normal;color:var(--gold);font-size:20px}
+          @keyframes atriumFloat{0%,100%{transform:translateY(6px) rotateY(-3deg) rotateX(1deg) scale(.985)}45%{transform:translateY(-8px) rotateY(7deg) rotateX(-2deg) scale(1.01)}72%{transform:translateY(-2px) rotateY(2deg) rotateX(1deg) scale(1)}}
+          @keyframes atriumMetal{0%,100%{background-position:0% 45%;filter:drop-shadow(-10px 10px 11px rgba(0,0,0,.52)) drop-shadow(0 0 18px rgba(120,170,255,.08))}48%{background-position:100% 55%;filter:drop-shadow(-8px 12px 12px rgba(0,0,0,.48)) drop-shadow(0 0 28px rgba(239,189,98,.16))}}
+          @keyframes atriumAura{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.08)}}
+          @keyframes atriumMessage{0%,62%,100%{opacity:0;transform:translate(-50%,-46%)}72%,88%{opacity:1;transform:translate(-50%,-50%)}}
+          @media(max-width:640px){.brand-motion{min-height:245px}.brand-motion .brand-symbol{width:132px;height:132px}.brand-motion .brand-symbol:before,.brand-motion .brand-symbol:after{font-size:114px}.brand-motion:before{width:220px;height:220px}.brand-motion .brand-line{width:170px;bottom:24px}.brand-motion .brand-copy{bottom:-10px;font-size:7px;letter-spacing:.2em}.brand-motion .brand-idea strong{font-size:12px;gap:9px}.brand-motion .brand-idea b{font-size:8px}}
+          @media(prefers-reduced-motion:reduce){.brand-motion:before,.brand-motion .brand-symbol,.brand-motion .brand-symbol:before,.brand-motion .brand-idea{animation:none!important}.brand-motion .brand-idea{display:none}}
+          '''
+
+          for path, (idea, experience, tagline) in files.items():
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              old_start = '<div class="hudcenter"><small>'
+              start = s.find(old_start)
+              if start == -1:
+                  raise SystemExit(f'hudcenter not found in {path}')
+              end = s.find('</div><div class="hudbottom">', start)
+              if end == -1:
+                  raise SystemExit(f'hudcenter end not found in {path}')
+              new = f'''<div class="hudcenter brand-motion"><div class="brand-symbol"><span class="brand-line"></span><span class="brand-copy">ATRIUM VISUAL · {tagline}</span></div><div class="brand-idea"><b>ATRIUM / VISUAL</b><strong>{idea}<i>→</i>{experience}</strong></div></div>'''
+              s = s[:start] + new + s[end+6:]
+              if 'ATRIUM BRAND MOTION TEST V1' not in s:
+                  s = s.replace('</style>', css + '\n</style>', 1)
+              p.write_text(s, encoding='utf-8')
+
+      - name: Commit changes
+        run: |
+          git config user.name "atrium-automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html en/index.html es/index.html
+          git commit -m "Test premium animated Atrium hero mark" || exit 0
+          git push
