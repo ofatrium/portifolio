@@ -954,10 +954,71 @@ body{
   .secondary-item small{font-size:7px;letter-spacing:.06em}
 }
 
+
+/* HOME FORMAT CATALOG V9 — Netflix-style browsing, Atrium visual language */
+.home-catalog-shell{position:relative}
+.home-catalog{
+  display:flex!important;
+  gap:14px!important;
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  padding:8px 2px 18px;
+}
+.home-catalog::-webkit-scrollbar{display:none}
+.home-catalog .format{
+  flex:0 0 clamp(255px,27vw,305px)!important;
+  width:auto!important;
+  min-width:0!important;
+  scroll-snap-align:start;
+}
+.home-catalog-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:20;
+  width:46px;height:46px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(8,11,16,.84);
+  color:#f6f1e7;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  font-size:29px;
+  line-height:1;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 14px 36px rgba(0,0,0,.42),0 0 18px rgba(239,188,99,.07);
+  transition:.25s ease;
+}
+.home-catalog-arrow:hover{color:var(--gold);border-color:rgba(239,188,99,.34);transform:translateY(-50%) scale(1.06)}
+.home-catalog-arrow.prev{left:-18px}
+.home-catalog-arrow.next{right:-18px}
+.home-catalog-arrow[disabled]{opacity:0;pointer-events:none}
+.home-catalog .format:hover{transform:translateY(-5px)}
+@media(max-width:760px){
+  .home-catalog{
+    gap:12px!important;
+    padding:6px 42px 16px 0!important;
+    overscroll-behavior-x:contain;
+  }
+  .home-catalog .format{flex:0 0 min(78vw,310px)!important}
+  .home-catalog-arrow{
+    width:36px;height:36px;font-size:24px;
+    opacity:.78;
+  }
+  .home-catalog-arrow.prev{left:4px}
+  .home-catalog-arrow.next{right:4px}
+}
+
 </style></head><body><div class="noise"></div><div class="cursor-light" id="cursorLight"></div>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><nav class="navlinks"><a href="#formatos">Formatos</a><a href="#servicos">Servicios</a><a href="#metodo">Método</a><a href="#planos">Planes</a><a href="/portfolio/es/">Portafolio</a></nav><div class="header-actions"><div class="langs"><a class="" href="/">PT-BR</a><a class="" href="/en/">EN</a><a class="active" href="/es/">ES</a></div><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Empezar proyecto ↗</a></div></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">PRODUCCIÓN AUDIOVISUAL + IA + DIRECCIÓN HUMANA</div><h1>Tienes la<br>idea.<br>Yo hago que<br><span class="grad">cobre vida.</span></h1><p>Edición, IA y dirección creativa para UGC, VSL, Reels, bodas, contenido de marca y campañas que necesitan captar atención sin parecer más de lo mismo.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Quiero dar vida a mi idea ↗</a><a class="btn" href="/portfolio/es/">Ver lo que produzco ↓</a></div><div class="home-capabilities"><div class="cap-track"><span>DIRECCIÓN CREATIVA</span><span>PRODUCCIÓN CON IA</span><span>CAPTURA MÓVIL</span><span>EDICIÓN DE VIDEO</span><span>MOTION DESIGN</span><span>DISEÑO SONORO</span><span>CONTENIDO PARA REDES</span><span>CAMPAÑAS DIGITALES</span><span>DIRECCIÓN CREATIVA</span><span>PRODUCCIÓN CON IA</span><span>CAPTURA MÓVIL</span><span>EDICIÓN DE VIDEO</span><span>MOTION DESIGN</span><span>DISEÑO SONORO</span><span>CONTENIDO PARA REDES</span><span>CAMPAÑAS DIGITALES</span></div></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter brand-motion"><div class="brand-symbol"><span class="brand-line"></span></div><div class="brand-idea"><strong>IDEA<i>→</i>EXPERIENCIA</strong></div></div><div class="hudbottom"><span>DIRIGIDO POR OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats"><div class="stat glass refract reveal" data-tilt><b>2 años</b><span>en pipelines con IA</span></div><div class="stat glass refract reveal" data-tilt><b>9:16</b><span>listo para redes</span></div><div class="stat glass refract reveal" data-tilt><b>2</b><span>revisiones por video</span></div><div class="stat glass refract reveal" data-tilt><b>1 min</b><span>para un briefing rápido</span></div></div></div></section>
-<section class="section" id="formatos"><div class="wrap"><div class="head reveal"><div><div class="label">Formatos</div><h2>Una idea. Diferentes formas de hacerla más fuerte.</h2></div><p>El foco de Atrium está en películas, campañas y contenido con dirección creativa. Algunas áreas funcionan como extensiones de ese mismo lenguaje visual.</p></div><div class="formats formats-core"><article class="format glass refract reveal" data-tilt><div class="ai-box">AI</div><div class="format-copy"><span class="num">01</span><h3>Campañas con IA</h3><p>Concepto, dirección y producción para transformar ideas complejas en películas visualmente fuertes.</p><span class="more">Dirección + tecnología ↗</span></div></article><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/ugc-scene.png" alt="UGC & VSL"><div class="format-copy"><span class="num">02</span><h3>UGC & VSL</h3><p>Guion, dirección, avatar, voz y edición con ritmo pensado para atención y conversión.</p><span class="more">Performance con narrativa ↗</span></div></article><article class="format glass refract reveal" data-tilt><div class="ai-box format-edit">EDIT</div><div class="format-copy"><span class="num">03</span><h3>Contenido & edición</h3><p>Reels, Shorts y piezas de marca con ritmo, identidad visual y acabado consistente.</p><span class="more">Contenido que permanece ↗</span></div></article></div><div class="secondary-fronts reveal"><div><span class="secondary-label">Otras áreas</span><p>Proyectos que también producimos con la misma dirección y cuidado visual.</p></div><div class="secondary-items"><div class="secondary-item glass"><span>Podcast & contenido</span><small>Cortes · narrativa · identidad</small></div><div class="secondary-item glass"><span>Bodas & historias</span><small>Películas autorales · memoria · emoción</small></div></div></div></div></section>
+<section class="section" id="formatos"><div class="wrap"><div class="head reveal"><div><div class="label">Formatos</div><h2>Una idea puede tomar muchas formas.</h2></div><p>Campañas, contenido, podcasts e historias con la misma dirección creativa — organizados en una navegación más fluida.</p></div><div class="home-catalog-shell"><button class="home-catalog-arrow prev" type="button" aria-label="Anterior">‹</button><div class="formats home-catalog"><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/ugc-scene.png" alt="UGC & VSL"><div class="format-copy"><span class="num">01</span><h3>UGC & VSL</h3><p>Guion, dirección, avatar, voz y edición con ritmo pensado para atención y conversión.</p><span class="more">Performance con narrativa ↗</span></div></article><article class="format glass refract reveal" data-tilt><div class="ai-box">AI</div><div class="format-copy"><span class="num">02</span><h3>Campañas con IA</h3><p>Concepto, dirección y producción para transformar ideas complejas en películas visualmente fuertes.</p><span class="more">Dirección + tecnología ↗</span></div></article><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/podcast-scene.png" alt="Podcast & contenido"><div class="format-copy"><span class="num">03</span><h3>Podcast & contenido</h3><p>Cortes, narrativa, identidad visual y ritmo para transformar conversación en contenido.</p><span class="more">Conversaciones que conectan ↗</span></div></article><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/wedding-scene.png" alt="Bodas & historias"><div class="format-copy"><span class="num">04</span><h3>Bodas & historias</h3><p>Películas autorales para preservar memoria, emoción y atmósfera con lenguaje cinematográfico.</p><span class="more">Historias que permanecen ↗</span></div></article></div><button class="home-catalog-arrow next" type="button" aria-label="Siguiente">›</button></div></div></section>
 <section class="section" id="servicos"><div class="wrap"><div class="head reveal"><div><div class="label">Servicios</div><h2>Estrategia, creación y acabado en un mismo flujo.</h2></div><p>La tecnología acelera. La dirección organiza la idea, define el lenguaje y conduce la ejecución.</p></div><div class="services services-core"><div class="service glass refract reveal" data-tilt><b>01 ✦</b><h3>Películas & campañas con IA</h3><p>Producción audiovisual con IA generativa guiada por concepto y dirección creativa humana.</p><a href="https://wa.me/5524974056237" target="_blank">Explorar ↗</a></div><div class="service glass refract reveal" data-tilt><b>02 ✦</b><h3>VSL & performance</h3><p>Guion, ritmo, voz, avatar y edición pensados para transformar atención en acción.</p><a href="https://wa.me/5524974056237" target="_blank">Conversión con narrativa ↗</a></div><div class="service glass refract reveal" data-tilt><b>03 ✦</b><h3>Contenido para redes</h3><p>Reels, TikTok y Shorts con claridad de mensaje, retención e identidad.</p><a href="https://wa.me/5524974056237" target="_blank">Social con dirección ↗</a></div><div class="service glass refract reveal" data-tilt><b>04 ✦</b><h3>Edición & identidad visual</h3><p>Montaje, motion, color, tipografía y acabado para dar consistencia a la presencia de la marca.</p><a href="https://wa.me/5524974056237" target="_blank">Acabado de marca ↗</a></div></div><div class="special-note reveal">También atendemos proyectos autorales y especiales, incluidos podcasts, bodas, documentales y producciones eclesiásticas.</div></div></section>
 <section class="statement"><div class="wrap reveal"><div class="label">ATRIUM VISUAL</div><h2>La tecnología acelera. La intención diferencia.</h2><p>Una imagen solo tiene valor cuando lleva intención. Por eso la IA entra como herramienta. La estrategia, la sensibilidad y las decisiones creativas siguen siendo humanas.</p><a class="btn" href="https://wa.me/5524974056237" target="_blank">Crear con propósito ↗</a></div></section>
 <section class="section" id="metodo"><div class="wrap"><div class="head reveal"><div><div class="label">Método</div><h2>De la conversación al video, sin complicaciones.</h2></div><p>Un flujo simple para sacar la idea de tu cabeza, convertirla en concepto y entregar una pieza lista para publicar.</p></div><div class="method"><div class="step refract reveal" data-tilt><strong>01</strong><h3>Entender</h3><p>Objetivo, público, referencia y mensaje.</p><em>Briefing</em></div><div class="step refract reveal" data-tilt><strong>02</strong><h3>Dirigir</h3><p>Concepto, guion y lenguaje visual.</p><em>Estrategia</em></div><div class="step refract reveal" data-tilt><strong>03</strong><h3>Producir</h3><p>IA, edición, sonido y acabado en un mismo pipeline.</p><em>Creación</em></div><div class="step refract reveal" data-tilt><strong>04</strong><h3>Refinar</h3><p>Tú revisas. Yo pulo. Tú recibes listo.</p><em>Entrega</em></div></div></div></section>
@@ -982,4 +1043,24 @@ document.querySelectorAll(q).forEach(el=>{el.classList.add('atrium-glass-v2');el
 </script>
 
 
+<script>
+/* Home format catalog controls */
+document.querySelectorAll('.home-catalog-shell').forEach(shell=>{
+  const track=shell.querySelector('.home-catalog');
+  const prev=shell.querySelector('.home-catalog-arrow.prev');
+  const next=shell.querySelector('.home-catalog-arrow.next');
+  if(!track||!prev||!next)return;
+  const amount=()=>Math.max(track.clientWidth*.82,280);
+  const update=()=>{
+    const max=track.scrollWidth-track.clientWidth-2;
+    prev.disabled=track.scrollLeft<=2;
+    next.disabled=track.scrollLeft>=max;
+  };
+  prev.addEventListener('click',()=>track.scrollBy({left:-amount(),behavior:'smooth'}));
+  next.addEventListener('click',()=>track.scrollBy({left:amount(),behavior:'smooth'}));
+  track.addEventListener('scroll',update,{passive:true});
+  addEventListener('resize',update,{passive:true});
+  requestAnimationFrame(update);
+});
+</script>
 </body></html>
