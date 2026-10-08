@@ -1015,10 +1015,120 @@ body{
   .home-catalog-arrow.next{right:4px}
 }
 
+
+/* HERO & AI CARD REFINEMENT V10 */
+.hero p{max-width:560px!important;font-size:17px!important;line-height:1.58!important;color:#aeb5c0!important}
+.stats-slim{
+  margin-top:24px!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:0!important;
+  border-top:1px solid rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.stats-slim .stat{
+  padding:16px 18px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  position:relative;
+}
+.stats-slim .stat+ .stat:before{
+  content:"";
+  position:absolute;
+  left:0;top:25%;bottom:25%;
+  width:1px;background:rgba(255,255,255,.07);
+}
+.stats-slim .stat b{font-size:18px!important;line-height:1.05!important;margin-bottom:4px;color:var(--gold)!important}
+.stats-slim .stat span{font-size:9px!important;letter-spacing:.09em;text-transform:uppercase;color:#767f8d!important}
+.stats-slim .stat:hover{box-shadow:none!important;background:rgba(255,255,255,.012)!important}
+
+/* Premium abstract AI visual */
+.ai-premium{
+  position:relative;
+  width:100%;
+  height:210px;
+  overflow:hidden;
+  background:
+    radial-gradient(180px 120px at 52% 42%,rgba(108,156,255,.18),transparent 68%),
+    radial-gradient(160px 130px at 80% 82%,rgba(239,188,99,.13),transparent 72%),
+    linear-gradient(145deg,#111620 0%,#090c12 56%,#0b0c10 100%);
+}
+.ai-premium:before{
+  content:"";
+  position:absolute;
+  width:118px;height:118px;
+  left:50%;top:50%;
+  transform:translate(-50%,-52%) rotate(45deg);
+  border:1px solid rgba(199,218,255,.28);
+  background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.008));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 42px rgba(99,150,255,.10),
+    30px 34px 70px rgba(239,188,99,.05);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.ai-premium:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(115deg,transparent 42%,rgba(177,210,255,.24) 49%,rgba(239,188,99,.17) 51%,transparent 58%);
+  transform:translateX(-42%);
+  animation:aiSweep 6.5s ease-in-out infinite;
+  opacity:.52;
+}
+.ai-premium .ai-mark{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  z-index:2;
+}
+.ai-premium .ai-mark span{
+  display:block;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.34em;
+  color:#dbe4f1;
+  text-transform:uppercase;
+  transform:translateY(1px);
+  text-shadow:0 0 24px rgba(120,170,255,.18);
+}
+.ai-premium .ai-orbit{
+  position:absolute;
+  left:50%;top:50%;
+  width:158px;height:62px;
+  border:1px solid rgba(239,188,99,.16);
+  border-radius:50%;
+  transform:translate(-50%,-50%) rotate(-14deg);
+  z-index:1;
+  opacity:.7;
+}
+@keyframes aiSweep{
+  0%,100%{transform:translateX(-48%);opacity:.22}
+  50%{transform:translateX(48%);opacity:.58}
+}
+@media(max-width:760px){
+  .stats-slim{
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:0!important;
+  }
+  .stats-slim .stat:nth-child(3){border-top:1px solid rgba(255,255,255,.06)}
+  .stats-slim .stat:nth-child(4){border-top:1px solid rgba(255,255,255,.06)}
+  .stats-slim .stat:nth-child(3):before{display:none}
+  .stats-slim .stat{padding:14px 12px!important}
+  .hero p{font-size:15px!important;max-width:92%!important}
+}
+
 </style></head><body><div class="noise"></div><div class="cursor-light" id="cursorLight"></div>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><nav class="navlinks"><a href="#formatos">Formatos</a><a href="#servicos">Serviços</a><a href="#metodo">Método</a><a href="#planos">Planos</a><a href="/portfolio/">Portfólio</a></nav><div class="header-actions"><div class="langs"><a class="active" href="/">PT-BR</a><a class="" href="/en/">EN</a><a class="" href="/es/">ES</a></div><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Começar projeto ↗</a></div></div></header>
-<main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">PRODUÇÃO AUDIOVISUAL + IA + DIREÇÃO HUMANA</div><h1>Você tem a<br>ideia.<br>Eu faço ela<br><span class="grad">ganhar vida.</span></h1><p>Edição, IA e direção criativa para UGC, VSL, Reels, casamentos, conteúdo de marca e campanhas que precisam prender atenção sem parecer mais do mesmo.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Quero tirar minha ideia do papel ↗</a><a class="btn" href="/portfolio/">Ver o que eu produzo ↓</a></div><div class="home-capabilities"><div class="cap-track"><span>DIREÇÃO CRIATIVA</span><span>PRODUÇÃO COM IA</span><span>CAPTAÇÃO MOBILE</span><span>EDIÇÃO DE VÍDEO</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>CONTEÚDO PARA REDES</span><span>CAMPANHAS DIGITAIS</span><span>DIREÇÃO CRIATIVA</span><span>PRODUÇÃO COM IA</span><span>CAPTAÇÃO MOBILE</span><span>EDIÇÃO DE VÍDEO</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>CONTEÚDO PARA REDES</span><span>CAMPANHAS DIGITAIS</span></div></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter brand-motion"><div class="brand-symbol"><span class="brand-line"></span></div><div class="brand-idea"><strong>IDEIA<i>→</i>EXPERIÊNCIA</strong></div></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats"><div class="stat glass refract reveal" data-tilt><b>2 anos</b><span>em pipelines com IA</span></div><div class="stat glass refract reveal" data-tilt><b>9:16</b><span>pronto para redes</span></div><div class="stat glass refract reveal" data-tilt><b>2</b><span>revisões por vídeo</span></div><div class="stat glass refract reveal" data-tilt><b>1 min</b><span>para um briefing expresso</span></div></div></div></section>
-<section class="section" id="formatos"><div class="wrap"><div class="head reveal"><div><div class="label">Formatos</div><h2>Uma ideia pode ganhar várias formas.</h2></div><p>Campanhas, conteúdo, podcasts e histórias com a mesma direção criativa — organizados em uma navegação mais fluida.</p></div><div class="home-catalog-shell"><button class="home-catalog-arrow prev" type="button" aria-label="Anterior">‹</button><div class="formats home-catalog"><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/ugc-scene.png" alt="UGC & VSL"><div class="format-copy"><span class="num">01</span><h3>UGC & VSL</h3><p>Roteiro, direção, avatar, voz e edição com ritmo pensado para atenção e conversão.</p><span class="more">Performance com narrativa ↗</span></div></article><article class="format glass refract reveal" data-tilt><div class="ai-box">AI</div><div class="format-copy"><span class="num">02</span><h3>Campanhas com IA</h3><p>Conceito, direção e produção para transformar ideias complexas em filmes visualmente fortes.</p><span class="more">Direção + tecnologia ↗</span></div></article><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/podcast-scene.png" alt="Podcast & conteúdo"><div class="format-copy"><span class="num">03</span><h3>Podcast & conteúdo</h3><p>Cortes, narrativa, identidade visual e ritmo para transformar conversa em conteúdo.</p><span class="more">Conversas que conectam ↗</span></div></article><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/wedding-scene.png" alt="Casamentos & histórias"><div class="format-copy"><span class="num">04</span><h3>Casamentos & histórias</h3><p>Filmes autorais para preservar memória, emoção e atmosfera com linguagem cinematográfica.</p><span class="more">Histórias que ficam ↗</span></div></article></div><button class="home-catalog-arrow next" type="button" aria-label="Próximo">›</button></div></div></section>
+<main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">PRODUÇÃO AUDIOVISUAL + IA + DIREÇÃO HUMANA</div><h1>Você tem a<br>ideia.<br>Eu faço ela<br><span class="grad">ganhar vida.</span></h1><p>Produção audiovisual, edição e IA aplicadas a campanhas, conteúdo e filmes com direção criativa.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Quero tirar minha ideia do papel ↗</a><a class="btn" href="/portfolio/">Ver o que eu produzo ↓</a></div><div class="home-capabilities"><div class="cap-track"><span>DIREÇÃO CRIATIVA</span><span>PRODUÇÃO COM IA</span><span>CAPTAÇÃO MOBILE</span><span>EDIÇÃO DE VÍDEO</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>CONTEÚDO PARA REDES</span><span>CAMPANHAS DIGITAIS</span><span>DIREÇÃO CRIATIVA</span><span>PRODUÇÃO COM IA</span><span>CAPTAÇÃO MOBILE</span><span>EDIÇÃO DE VÍDEO</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>CONTEÚDO PARA REDES</span><span>CAMPANHAS DIGITAIS</span></div></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter brand-motion"><div class="brand-symbol"><span class="brand-line"></span></div><div class="brand-idea"><strong>IDEIA<i>→</i>EXPERIÊNCIA</strong></div></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats stats-slim"><div class="stat reveal"><b>2 anos</b><span>IA aplicada</span></div><div class="stat reveal"><b>9:16</b><span>social-first</span></div><div class="stat reveal"><b>2 revisões</b><span>por vídeo</span></div><div class="stat reveal"><b>1 min</b><span>briefing expresso</span></div></div></div></section>
+<section class="section" id="formatos"><div class="wrap"><div class="head reveal"><div><div class="label">Formatos</div><h2>Uma ideia pode ganhar várias formas.</h2></div><p>Campanhas, conteúdo, podcasts e histórias com a mesma direção criativa — organizados em uma navegação mais fluida.</p></div><div class="home-catalog-shell"><button class="home-catalog-arrow prev" type="button" aria-label="Anterior">‹</button><div class="formats home-catalog"><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/ugc-scene.png" alt="UGC & VSL"><div class="format-copy"><span class="num">01</span><h3>UGC & VSL</h3><p>Roteiro, direção, avatar, voz e edição com ritmo pensado para atenção e conversão.</p><span class="more">Performance com narrativa ↗</span></div></article><article class="format glass refract reveal" data-tilt><div class="ai-premium"><div class="ai-orbit"></div><div class="ai-mark"><span>ATRIUM AI</span></div></div><div class="format-copy"><span class="num">02</span><h3>Campanhas com IA</h3><p>Conceito, direção e produção para transformar ideias complexas em filmes visualmente fortes.</p><span class="more">Direção + tecnologia ↗</span></div></article><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/podcast-scene.png" alt="Podcast & conteúdo"><div class="format-copy"><span class="num">03</span><h3>Podcast & conteúdo</h3><p>Cortes, narrativa, identidade visual e ritmo para transformar conversa em conteúdo.</p><span class="more">Conversas que conectam ↗</span></div></article><article class="format glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/wedding-scene.png" alt="Casamentos & histórias"><div class="format-copy"><span class="num">04</span><h3>Casamentos & histórias</h3><p>Filmes autorais para preservar memória, emoção e atmosfera com linguagem cinematográfica.</p><span class="more">Histórias que ficam ↗</span></div></article></div><button class="home-catalog-arrow next" type="button" aria-label="Próximo">›</button></div></div></section>
 <section class="section" id="servicos"><div class="wrap"><div class="head reveal"><div><div class="label">Serviços</div><h2>Estratégia, criação e acabamento no mesmo fluxo.</h2></div><p>A tecnologia acelera. A direção organiza a ideia, define a linguagem e conduz a execução.</p></div><div class="services services-core"><div class="service glass refract reveal" data-tilt><b>01 ✦</b><h3>Filmes & campanhas com IA</h3><p>Produção audiovisual com IA generativa guiada por conceito e direção criativa humana.</p><a href="https://wa.me/5524974056237" target="_blank">Explorar ↗</a></div><div class="service glass refract reveal" data-tilt><b>02 ✦</b><h3>VSL & performance</h3><p>Roteiro, ritmo, voz, avatar e edição pensados para transformar atenção em ação.</p><a href="https://wa.me/5524974056237" target="_blank">Conversão com narrativa ↗</a></div><div class="service glass refract reveal" data-tilt><b>03 ✦</b><h3>Conteúdo para redes</h3><p>Reels, TikTok e Shorts com clareza de mensagem, retenção e identidade.</p><a href="https://wa.me/5524974056237" target="_blank">Social com direção ↗</a></div><div class="service glass refract reveal" data-tilt><b>04 ✦</b><h3>Edição & identidade visual</h3><p>Montagem, motion, cor, tipografia e acabamento para dar consistência à presença da marca.</p><a href="https://wa.me/5524974056237" target="_blank">Acabamento de marca ↗</a></div></div><div class="special-note reveal">Também atendemos projetos autorais e especiais, incluindo podcasts, casamentos, documentários e produções eclesiásticas.</div></div></section>
 <section class="statement"><div class="wrap reveal"><div class="label">ATRIUM VISUAL</div><h2>Tecnologia acelera. Intenção diferencia.</h2><p>Uma imagem só tem valor quando carrega intenção. Por isso, a IA entra como ferramenta. A estratégia, a sensibilidade e as decisões criativas continuam humanas.</p><a class="btn" href="https://wa.me/5524974056237" target="_blank">Criar algo com propósito ↗</a></div></section>
 <section class="section" id="metodo"><div class="wrap"><div class="head reveal"><div><div class="label">Método</div><h2>Da conversa ao vídeo, sem complicação.</h2></div><p>Um fluxo enxuto para tirar a ideia da cabeça, transformar em conceito e devolver um material pronto para publicar.</p></div><div class="method"><div class="step refract reveal" data-tilt><strong>01</strong><h3>Entender</h3><p>Objetivo, público, referência e mensagem.</p><em>Briefing</em></div><div class="step refract reveal" data-tilt><strong>02</strong><h3>Direcionar</h3><p>Conceito, roteiro e linguagem visual.</p><em>Estratégia</em></div><div class="step refract reveal" data-tilt><strong>03</strong><h3>Produzir</h3><p>IA, edição, som e acabamento no mesmo pipeline.</p><em>Criação</em></div><div class="step refract reveal" data-tilt><strong>04</strong><h3>Refinar</h3><p>Você revisa. Eu lapido. Você recebe pronto.</p><em>Entrega</em></div></div></div></section>
