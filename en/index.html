@@ -1132,6 +1132,83 @@ body{
 .ai-photo-wrap:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 70%,rgba(8,10,14,.18) 100%)}
 .format:hover .ai-card-photo{transform:scale(1.075)}
 @media(max-width:760px){.ai-photo-wrap{height:205px}}
+
+/* FEATURED PLAN V12 — premium emphasis */
+.plan.featured{
+  position:relative!important;
+  z-index:3;
+  border-color:rgba(239,188,99,.62)!important;
+  background:
+    radial-gradient(420px 220px at 100% 100%,rgba(239,188,99,.12),transparent 68%),
+    radial-gradient(360px 200px at 0% 0%,rgba(77,190,255,.10),transparent 70%),
+    linear-gradient(145deg,rgba(18,23,31,.96),rgba(9,12,17,.98))!important;
+  box-shadow:
+    0 24px 64px rgba(0,0,0,.36),
+    -10px -8px 36px rgba(77,190,255,.07),
+    12px 12px 42px rgba(239,188,99,.12),
+    inset 0 1px 0 rgba(255,255,255,.055)!important;
+}
+.plan.featured:before{
+  content:"";
+  position:absolute;
+  left:18px;right:18px;top:-1px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(82,201,255,.65),rgba(239,188,99,.95));
+  box-shadow:0 0 18px rgba(239,188,99,.24);
+  pointer-events:none;
+}
+.plan.featured .featured-label{
+  display:flex!important;
+  align-items:center;
+  gap:9px;
+  margin-bottom:14px!important;
+  min-height:27px;
+}
+.plan.featured .featured-tag{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 10px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#f6d08a,#efbc63);
+  color:#11151b;
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.13em;
+  line-height:1;
+  text-transform:uppercase;
+  box-shadow:0 7px 24px rgba(239,188,99,.18);
+}
+.plan.featured .featured-context{
+  color:#aeb5bf;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.plan.featured h3{color:#fff!important}
+.plan.featured .price{
+  color:#f6d08a!important;
+  text-shadow:0 0 20px rgba(239,188,99,.12);
+}
+.plan.featured ul li:before{color:var(--gold)!important}
+.plan.featured:hover{
+  border-color:rgba(246,208,138,.82)!important;
+  box-shadow:
+    0 28px 72px rgba(0,0,0,.40),
+    -12px -10px 42px rgba(77,190,255,.10),
+    14px 14px 50px rgba(239,188,99,.17),
+    inset 0 1px 0 rgba(255,255,255,.07)!important;
+}
+@media(min-width:901px){
+  .plans{align-items:stretch}
+  .plan.featured{margin-top:-10px;margin-bottom:-10px}
+}
+@media(max-width:900px){
+  .plan.featured{margin:6px 0}
+  .plan.featured .featured-label{flex-wrap:wrap}
+}
+
 </style></head><body><div class="noise"></div><div class="cursor-light" id="cursorLight"></div>
 <header><div class="wrap nav"><a class="brand" href="#top"><span class="mark">Λ</span><span>ATRIUM<small>VISUAL</small></span></a><nav class="navlinks"><a href="#formatos">Formats</a><a href="#servicos">Services</a><a href="#metodo">Method</a><a href="#planos">Plans</a><a href="/portfolio/en/">Portfolio</a></nav><div class="header-actions"><div class="langs"><a class="" href="/">PT-BR</a><a class="active" href="/en/">EN</a><a class="" href="/es/">ES</a></div><a class="btn" href="https://wa.me/5524974056237" target="_blank" rel="noopener">Start a project ↗</a></div></div></header>
 <main id="top"><section class="hero"><div class="wrap"><div class="hero-grid"><div class="reveal in"><div class="kicker">AUDIOVISUAL PRODUCTION + AI + HUMAN DIRECTION</div><h1>You have the<br>idea.<br>I make it<br><span class="grad">come alive.</span></h1><p>Audiovisual production, editing and AI applied to campaigns, content and films with creative direction.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">Bring my idea to life ↗</a><a class="btn" href="/portfolio/en/">See what I create ↓</a></div><div class="home-capabilities"><div class="cap-track"><span>CREATIVE DIRECTION</span><span>AI PRODUCTION</span><span>MOBILE CAPTURE</span><span>VIDEO EDITING</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>SOCIAL CONTENT</span><span>DIGITAL CAMPAIGNS</span><span>CREATIVE DIRECTION</span><span>AI PRODUCTION</span><span>MOBILE CAPTURE</span><span>VIDEO EDITING</span><span>MOTION DESIGN</span><span>SOUND DESIGN</span><span>SOCIAL CONTENT</span><span>DIGITAL CAMPAIGNS</span></div></div></div><div class="hero-card glass refract reveal in" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter brand-motion"><div class="brand-symbol"><span class="brand-line"></span></div><div class="brand-idea"><strong>IDEA<i>→</i>EXPERIENCE</strong></div></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div><div class="stats stats-slim"><div class="stat reveal"><b>2 years</b><span>applied AI</span></div><div class="stat reveal"><b>9:16</b><span>social-first</span></div><div class="stat reveal"><b>2 revisions</b><span>per video</span></div><div class="stat reveal"><b>1 min</b><span>quick brief</span></div></div></div></section>
@@ -1139,7 +1216,7 @@ body{
 <section class="section" id="servicos"><div class="wrap"><div class="head reveal"><div><div class="label">Services</div><h2>Strategy, creation and finishing in one workflow.</h2></div><p>Technology accelerates. Direction organizes the idea, defines the language and leads execution.</p></div><div class="services services-core"><div class="service glass refract reveal" data-tilt><b>01 ✦</b><h3>AI films & campaigns</h3><p>Audiovisual production with generative AI guided by concept and human creative direction.</p><a href="https://wa.me/5524974056237" target="_blank">Explore ↗</a></div><div class="service glass refract reveal" data-tilt><b>02 ✦</b><h3>VSL & performance</h3><p>Script, pacing, voice, avatar and editing designed to turn attention into action.</p><a href="https://wa.me/5524974056237" target="_blank">Conversion through narrative ↗</a></div><div class="service glass refract reveal" data-tilt><b>03 ✦</b><h3>Social content</h3><p>Reels, TikTok and Shorts with message clarity, retention and identity.</p><a href="https://wa.me/5524974056237" target="_blank">Social with direction ↗</a></div><div class="service glass refract reveal" data-tilt><b>04 ✦</b><h3>Editing & visual identity</h3><p>Editing, motion, color, typography and finishing that give the brand consistency.</p><a href="https://wa.me/5524974056237" target="_blank">Brand finishing ↗</a></div></div><div class="special-note reveal">We also take on authorial and special projects, including podcasts, weddings, documentaries and church media productions.</div></div></section>
 <section class="statement"><div class="wrap reveal"><div class="label">ATRIUM VISUAL</div><h2>Technology accelerates. Intention differentiates.</h2><p>An image only has value when it carries intention. AI is a tool. Strategy, sensitivity and creative decisions remain human.</p><a class="btn" href="https://wa.me/5524974056237" target="_blank">Create with purpose ↗</a></div></section>
 <section class="section" id="metodo"><div class="wrap"><div class="head reveal"><div><div class="label">Method</div><h2>From conversation to video, without friction.</h2></div><p>A lean workflow that takes the idea out of your head, turns it into a concept and delivers a piece ready to publish.</p></div><div class="method"><div class="step refract reveal" data-tilt><strong>01</strong><h3>Understand</h3><p>Goal, audience, reference and message.</p><em>Brief</em></div><div class="step refract reveal" data-tilt><strong>02</strong><h3>Direct</h3><p>Concept, script and visual language.</p><em>Strategy</em></div><div class="step refract reveal" data-tilt><strong>03</strong><h3>Produce</h3><p>AI, editing, sound and finishing in one pipeline.</p><em>Creation</em></div><div class="step refract reveal" data-tilt><strong>04</strong><h3>Refine</h3><p>You review. I polish. You receive it ready.</p><em>Delivery</em></div></div></div></section>
-<section class="section" id="planos"><div class="wrap"><div class="head reveal"><div><div class="label">Plans</div><h2>Start with one video. Scale when it makes sense.</h2></div><p>Complete scripting and production, animated captions, 9:16 format, digital file and two revisions per video.</p></div><div class="plans"><div class="plan glass refract reveal " data-tilt><small>To test</small><h3>Single video</h3><div class="price">R$350</div><p>1 complete video</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div><div class="plan glass refract reveal featured" data-tilt><small>Most chosen · For consistency</small><h3>Pack of 10</h3><div class="price">R$270<span style="font-size:12px">/vídeo</span></div><p>R$ 2,700 total</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div><div class="plan glass refract reveal " data-tilt><small>For volume</small><h3>Pack of 30</h3><div class="price">R$200<span style="font-size:12px">/vídeo</span></div><p>R$ 6,000 total</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div><div class="plan glass refract reveal " data-tilt><small>For presence</small><h3>90-day presence</h3><div class="price">R$180<span style="font-size:12px">/vídeo</span></div><p>90 videos · R$ 2,700/month entry</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div></div><div class="enterprise-offer glass refract reveal" data-tilt><div><h3>Need videos longer than 30 seconds or a custom solution?</h3><p>Special pricing is available for companies, campaigns and recurring content needs.</p></div><a class="btn primary" href="https://wa.me/5524974056237?text=Hi%20Osires!%20I'm%20interested%20in%20videos%20longer%20than%2030%20seconds%20for%20my%20company.%20I'd%20like%20to%20learn%20about%20custom%20project%20pricing%20and%20conditions." target="_blank" rel="noopener">Request company pricing ↗</a></div></div></section>
+<section class="section" id="planos"><div class="wrap"><div class="head reveal"><div><div class="label">Plans</div><h2>Start with one video. Scale when it makes sense.</h2></div><p>Complete scripting and production, animated captions, 9:16 format, digital file and two revisions per video.</p></div><div class="plans"><div class="plan glass refract reveal " data-tilt><small>To test</small><h3>Single video</h3><div class="price">R$350</div><p>1 complete video</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div><div class="plan glass refract reveal featured" data-tilt><small class="featured-label"><span class="featured-tag">Most chosen</span><span class="featured-context">For consistency</span></small><h3>Pack of 10</h3><div class="price">R$270<span style="font-size:12px">/vídeo</span></div><p>R$ 2,700 total</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div><div class="plan glass refract reveal " data-tilt><small>For volume</small><h3>Pack of 30</h3><div class="price">R$200<span style="font-size:12px">/vídeo</span></div><p>R$ 6,000 total</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div><div class="plan glass refract reveal " data-tilt><small>For presence</small><h3>90-day presence</h3><div class="price">R$180<span style="font-size:12px">/vídeo</span></div><p>90 videos · R$ 2,700/month entry</p><div class="scope-note">Pricing applies to videos up to 30 seconds, produced with AI or edited from raw footage provided by the client.</div><ul><li>Script + editing</li><li>2 revisions per video</li><li>Ready-to-publish file</li></ul></div></div><div class="enterprise-offer glass refract reveal" data-tilt><div><h3>Need videos longer than 30 seconds or a custom solution?</h3><p>Special pricing is available for companies, campaigns and recurring content needs.</p></div><a class="btn primary" href="https://wa.me/5524974056237?text=Hi%20Osires!%20I'm%20interested%20in%20videos%20longer%20than%2030%20seconds%20for%20my%20company.%20I'd%20like%20to%20learn%20about%20custom%20project%20pricing%20and%20conditions." target="_blank" rel="noopener">Request company pricing ↗</a></div></div></section>
 <section class="section"><div class="wrap about"><div class="portrait glass refract reveal" data-tilt><img src="https://atrium-visual.cmdiscipulos2023.chatgpt.site/osires.jpg" alt="Osires — Atrium Visual"><div class="badge"><b>ATRIUM VISUAL</b><span>Direção + Edição + IA</span></div></div><div class="reveal"><div class="label">Who's behind it</div><h2>I'm Osires.</h2><p>I'm the person you talk to about your idea. From the first reference to the final adjustment, a human point of view directs what we create.</p><div class="chips"><span class="chip">Mobile-first</span><span class="chip">IA aplicada</span><span class="chip">Direção criativa</span><span class="chip">Atendimento direto</span></div><a class="btn" href="https://wa.me/5524974056237" target="_blank">Let's talk about your project ↗</a></div></div></section>
 <section class="section"><div class="wrap"><div class="brief-box glass refract reveal" data-tilt><div class="brief-grid"><div class="brief"><div class="label">Quick brief</div><h2>Tell me your idea. I'll show you the path.</h2><p>Fill in the basics. The button below opens WhatsApp with everything organized so we can start without friction.</p><div class="contactline">WhatsApp · +55 24 97405-6237<br>E-mail · ofatrium@gmail.com<br>Brazil · International clients</div></div><form class="form" id="briefForm"><input class="field" id="name" placeholder="What should I call you?"><select class="field" id="type"><option value="">What do you want to produce?</option><option>AI video</option><option>UGC / VSL</option><option>Reels / Social</option><option>Campaign</option><option>Other</option></select><select class="field" id="qty"><option value="">Approximate quantity</option><option>1 video</option><option>2–5 videos</option><option>6–10 videos</option><option>More than 10</option></select><button class="btn primary" type="submit">Get guidance on WhatsApp ↗</button><small>No commitment. You speak directly with Osires.</small></form></div></div></div></section>
 <section class="cta"><div class="wrap"><div class="cta-box glass refract reveal" data-tilt><div class="cta-row"><div><div class="label">One conversation. Many possibilities.</div><h2>Your next video starts here.</h2><p>Point your camera at the QR code or tap it.</p><div class="hero-actions"><a class="btn primary" href="https://wa.me/5524974056237" target="_blank">WhatsApp ↗</a><a class="btn" href="/portfolio/en/">Portfolio ↗</a></div></div><a href="https://wa.me/5524974056237" target="_blank"><img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACg0lEQVR4nO2aTW7bMBCFvykFeCkDOYCPIt0sV5OO0htIywAUXhdDyoqLFgkiqxE6Wtj6+RYPeHjkDEkTn7nGH5/CIfjggw8++OCD/xNv5WpgtAbr5wZgMevn+q0/UE/we/GN/3UDwPwCnUCQMUiCOWUA7Bg9wT+Hn2tCx2tJrYbWncWDfaye4J/Edz8vYrxJ9jotdVT+h3qC/xLfPL4Ye0wAgiQ7Wk/w+/LV31bADAYpA8vG+O0SyHfTH/yH+NHMzK5AN4H180V0UxKwePl8rJ7gd+I9pveEinkxjbc3Y7xlSrCP0xP8vjySJDplNJAEbUaaUs1vmx3xa/hu+oP/GD83QPtm7qrn9woa5osYr2D9oXqC34cv+aWVj8P3rlfD+8fI7xn56i/JB2m6KUlDK9G5pdlrrvD3lPw6uZb51yfhbqI8yu3OuN3h78n4Wl9NcC+tNKxfh1bbK/w9K58E80Vmt+yP0pRkPYt5d9wfqyf4Xfi1vso8zLpeX+l9kxT5PRm/js9J0rS+baUy/652h79n5N/VV22mJBm8kn4sp8Pfk/Gb9St8EgZKkmtPXBqn8Pe0vIa54d4GAUka5obaKR2sJ/i9+G1/tA7I2+VoyoeYf0/JbzcP1kr6vmDlcXb3w98T8r4/WHd3UxYsQCuMdgLmlwxtbnSMnuCfwnvXO4HZNQlmMw0s5nEe7SLrj9QT/M58PT9ZXZXsdUpiNLM6HR+pJ/h9+MfzdUbrp3IajdepvBwtZfMj0t9Nf/Cf4z2mvqHvPZP0N/7ZeoL/Gr8pk33raP2h7AnX0zvRH52RX/f3Aer5q3uTVO7C37Pyv5+fLE/rDSXJx+gJPvjggw8++P+B/wUlZP9UE1rVbgAAAABJRU5ErkJggg==" alt="WhatsApp QR Code"></a></div></div></div></section></main>
