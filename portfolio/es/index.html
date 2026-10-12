@@ -1129,6 +1129,18 @@ body,main,header,footer,.section,.hero{width:100%;max-width:100vw}
   .actions>.btn{max-width:46vw;overflow:hidden;text-overflow:ellipsis}
 }
 
+
+/* HERO VIDEO LOOPS V13 */
+.hero-loop-card{background:#05070b!important;isolation:isolate}
+.hero-loop-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;transform:translateZ(0)}
+.home-loop-video{object-position:center 44%}
+.highlights-loop-video{object-position:center center}
+.hero-loop-scrim{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(3,5,8,.10) 0%,rgba(3,5,8,0) 28%,rgba(3,5,8,.04) 68%,rgba(3,5,8,.24) 100%),linear-gradient(90deg,rgba(7,10,15,.08),transparent 23%,transparent 77%,rgba(7,10,15,.08))}
+.hero-loop-hud{z-index:4!important;pointer-events:none}
+.hero-loop-card .hudtop,.hero-loop-card .hudbottom{color:rgba(232,236,243,.58)!important;text-shadow:0 1px 9px rgba(0,0,0,.58)}
+.hero-loop-card .online:before{box-shadow:0 0 15px #6ca4ff,0 0 26px rgba(108,164,255,.42)}
+@media(max-width:760px){.home-loop-video{object-position:center 42%}}
+
 </style>
 <link rel="preconnect" href="https://drive.usercontent.google.com" crossorigin>\n<link rel="dns-prefetch" href="//drive.usercontent.google.com">\n</head>
 <body>
@@ -1139,7 +1151,16 @@ body,main,header,footer,.section,.hero{width:100%;max-width:100vw}
 
 <main>
 <section class="hero"><div class="wrap hero-grid"><div class="reveal in"><div class="kicker">PORTAFOLIO · EDICIÓN + IA + DIRECCIÓN CREATIVA</div><h1>Ideas que<br><span class="grad">se volvieron imagen.</span></h1><p>Una selección de trabajos para marcas con lenguajes visuales diferentes. De belleza a tecnología, la idea es siempre la misma: crear algo que se sienta pensado — no solo generado.</p><div class="hero-actions"><a class="btn primary" href="#salon">Ver trabajos ↓</a><a class="btn" href="/">Volver al sitio ↗</a></div></div>
-<div class="hero-card glass reveal in" id="heroCard" data-tilt><div class="hud"><div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div><div class="hudcenter"><small>CREATIVE PORTFOLIO</small><strong>IDEIA</strong><i>↓</i><strong>IMAGEM</strong></div><div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div></div></div></div></section>
+<div class="hero-card glass reveal in hero-loop-card" id="heroCard" data-tilt>
+  <video class="hero-loop-video highlights-loop-video" autoplay muted loop playsinline preload="metadata" poster="/assets/loops/Atrium_Highlights_Poster.webp" aria-hidden="true" tabindex="-1">
+    <source src="/assets/loops/Atrium_Highlights_Loop.mp4" type="video/mp4">
+  </video>
+  <div class="hero-loop-scrim"></div>
+  <div class="hud hero-loop-hud">
+    <div class="hudtop"><span>ATRIUM / VISUAL</span><span>2026</span></div>
+    <div class="hudbottom"><span>DIRECTED BY OSIRES</span><span class="online">ONLINE</span></div>
+  </div>
+</div></div></section>
 <div class="marquee"><div class="track"><span>DIRECCIÓN CREATIVA</span><span>PRODUCCIÓN CON IA</span><span>CAPTURA MÓVIL</span><span>EDICIÓN DE VIDEO</span><span>MOTION DESIGN</span><span>DISEÑO SONORO</span><span>CONTENIDO PARA REDES</span><span>CAMPAÑAS DIGITALES</span><span>DIRECCIÓN CREATIVA</span><span>PRODUCCIÓN CON IA</span><span>CAPTURA MÓVIL</span><span>EDICIÓN DE VIDEO</span><span>MOTION DESIGN</span><span>DISEÑO SONORO</span><span>CONTENIDO PARA REDES</span><span>CAMPAÑAS DIGITALES</span></div></div>
 
 <section class="section atmo-section" id="salon"><div class="wrap"><div class="head reveal"><div><div class="label">01 · SALON LINE</div><h2>Producto con apetito visual.</h2></div><p>Piezas de belleza que combinan producto, textura, color y ritmo para social con un acabado más publicitario.</p></div><div class="grid"><article class="work-card  reveal" data-tilt>
