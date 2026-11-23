@@ -58,7 +58,8 @@ const ALLOWED = new Set([
 ,
 "1_NrZvlekICq1iVopgN4uzXU3GkHi5tp0"
 ,
-"1kB5vRQ4pwXqHgbd1g6YD9gVEPEzFPD4Q"
+"1kB5vRQ4pwXqHgbd1g6YD9gVEPEzFPD4Q",
+"121zi8_qvW0al49Kbx38QGQaPD9Pd_IKJ"
 ]);
 
 export default async function handler(req, res) {
