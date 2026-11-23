@@ -1141,6 +1141,19 @@ body,main,header,footer,.section,.hero{width:100%;max-width:100vw}
 .hero-loop-card .online:before{box-shadow:0 0 15px #6ca4ff,0 0 26px rgba(108,164,255,.42)}
 @media(max-width:760px){.home-loop-video{object-position:center 42%}}
 
+
+/* Drive's adaptive playback removes the extra proxy hop for portfolio videos. */
+.player-shell.drive-mode .stage iframe.drive-player{
+  display:block;width:100%;height:100%;border:0;background:#000;
+}
+.player-shell.drive-mode .controls{display:none!important}
+.player-shell .drive-backup{display:none}
+.player-shell.drive-mode .drive-backup{
+  flex:0 0 36px;min-height:36px;display:flex;align-items:center;justify-content:center;
+  background:#080c12;border-top:1px solid rgba(255,255,255,.09);
+}
+.player-shell .drive-backup a{font-size:12px;color:#cbd6e6;text-decoration:none}
+.player-shell .drive-backup a:hover{text-decoration:underline;color:#fff}
 </style>
 <link rel="preconnect" href="https://drive.usercontent.google.com" crossorigin>\n<link rel="dns-prefetch" href="//drive.usercontent.google.com">\n</head>
 <body>
@@ -1381,35 +1394,36 @@ function closePlayer(){
 }
 function openPlayer(btn){
   const id=btn.dataset.video,orientation=btn.dataset.orientation||'landscape';
-  activeId=id;activeSources=QUALITY_SOURCES[id]||{"Original":id};
-  qualityMenu.innerHTML='';
-  const available=Object.keys(activeSources).filter(label=>label!=="Original");
-  if(available.length){
-    available.forEach(label=>{
-      const b=document.createElement('button');
-      b.type='button';b.className='quality-option';b.dataset.quality=label;b.textContent=label;
-      qualityMenu.appendChild(b);
-    });
-    qualityWrap.hidden=false;
-  }else{
-    qualityWrap.hidden=true;
-  }
-  const startQuality=activeSources["720p"]?"720p":(available[0]||"Original");
-  qualityBtn.dataset.quality=startQuality;
-  [...qualityMenu.children].forEach(b=>b.classList.toggle('active',b.dataset.quality===startQuality));
-  shell.classList.remove('portrait','landscape');shell.classList.add(orientation);
+  if(!/^[a-zA-Z0-9_-]{10,}$/.test(id))return;
+  activeId=id;activeVideo=null;activeSources=null;
+  shell.classList.remove('portrait','landscape');shell.classList.add(orientation,'drive-mode');
   title.textContent=btn.dataset.title||'Atrium Visual';
-  stage.innerHTML='<div class="loading">Carregando vídeo…</div>';
-  const video=document.createElement('video');
-  video.playsInline=true;video.preload='metadata';video.autoplay=true;video.controls=false;
-  let currentSourceId=activeSources[qualityBtn.dataset.quality]||id;let proxyTried=false;video.src=sourceUrl(currentSourceId);
-  video.addEventListener('loadedmetadata',()=>{const l=stage.querySelector('.loading');if(l)l.remove();sync()});
-  video.addEventListener('canplay',()=>{const l=stage.querySelector('.loading');if(l)l.remove()});
-  video.addEventListener('timeupdate',sync);video.addEventListener('play',sync);video.addEventListener('pause',sync);video.addEventListener('ended',sync);
-  video.addEventListener('error',()=>{if(!proxyTried&&currentSourceId!==id){proxyTried=true;video.src='/api/video?id='+encodeURIComponent(currentSourceId);video.load();video.play().catch(()=>sync());return;}stage.innerHTML='<div class="fallback">Não foi possível carregar o vídeo.<br><a href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener">Abrir no Drive ↗</a></div>'});
-  stage.appendChild(video);activeVideo=video;
+  qualityMenu.innerHTML='';
+  qualityWrap.hidden=true;
+  stage.replaceChildren();
+  const frame=document.createElement('iframe');
+  frame.className='drive-player';
+  frame.title=btn.dataset.title||'Portfolio video';
+  frame.src='https://drive.google.com/file/d/'+encodeURIComponent(id)+'/preview';
+  frame.loading='eager';
+  frame.allow='autoplay; fullscreen; picture-in-picture; encrypted-media';
+  frame.allowFullscreen=true;
+  frame.setAttribute('webkitallowfullscreen','true');
+  frame.setAttribute('frameborder','0');
+  stage.appendChild(frame);
+  let backup=shell.querySelector('.drive-backup');
+  if(!backup){
+    backup=document.createElement('div');
+    backup.className='drive-backup';
+    shell.insertBefore(backup,shell.querySelector('.controls'));
+  }
+  backup.replaceChildren();
+  const link=document.createElement('a');
+  link.href='https://drive.google.com/file/d/'+encodeURIComponent(id)+'/view';
+  link.target='_blank';link.rel='noopener noreferrer';
+  link.textContent="Se demorar, abrir no Drive ↗";
+  backup.appendChild(link);
   modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');
-  video.play().catch(()=>sync());
 }
 document.querySelectorAll('.play-ui').forEach(btn=>btn.addEventListener('click',()=>openPlayer(btn)));
 playPause.addEventListener('click',()=>{if(!activeVideo)return;activeVideo.paused?activeVideo.play():activeVideo.pause()});
