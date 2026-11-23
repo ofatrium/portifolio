@@ -1294,7 +1294,7 @@ document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 
 const modal=document.getElementById('modal'),shell=document.getElementById('playerShell'),stage=document.getElementById('stage'),title=document.getElementById('playerTitle');
 const playPause=document.getElementById('playPause'),timeline=document.getElementById('timeline'),timecode=document.getElementById('timecode'),qualityWrap=document.getElementById('qualityWrap'),qualityBtn=document.getElementById('qualityBtn'),qualityMenu=document.getElementById('qualityMenu'),fullscreenBtn=document.getElementById('fullscreenBtn');
-let activeVideo=null,activeId=null,activeSources=null;
+let activeVideo=null,activeId=null,activeSources=null,currentSourceId=null,proxyTried=false;
 const QUALITY_SOURCES={
   "1jehLxi3AbDH1pfS5Mwroga5QlZmeF_nP": {
     "720p": "1Etxe_1tuB_dLOnU-sbXxpV4quJHfPH1g",
@@ -1309,7 +1309,7 @@ const QUALITY_SOURCES={
     "Original": "1CCrJmTGxYEG5Z4N-FvFVM0LW58YVvw_x"
   },
   "1u7GEsYQ9VXK1G9_bqNn82aDSy5714M54": {
-    "720p": "17g5UO9qoYRXhZQ6dYZfK3qkTpU-9_uZq",
+    "540p": "1gjFD0I-wnyGbulrPxFqjKfU6v4FC88M6",
     "Original": "1u7GEsYQ9VXK1G9_bqNn82aDSy5714M54"
   },
   "1ysOOigGUm1V6wtwtHaH1E2-puU1sh1J7": {
@@ -1354,14 +1354,15 @@ const QUALITY_SOURCES={
     "Original": "1kB5vRQ4pwXqHgbd1g6YD9gVEPEzFPD4Q"
   },
   "1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm": {
+    "540p": "1xoUmzr750ynquACn9tLuSTYHqz1ZtlW0",
     "Original": "1EF5lxmUE-AETPqgxdHKg9f3UVvQcSghm"
   },
   "1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2": {
+    "540p": "16HN3eOGmGqYoeB8cljwbxOgfxEAHPUV1",
     "Original": "1sF6El1sMDOku9zszLBZevi3lIy9F1Cf2"
   }
 };
 function sourceUrl(sourceId){
-  if(sourceId===activeId)return '/api/video?id='+encodeURIComponent(sourceId);
   return 'https://drive.usercontent.google.com/download?id='+encodeURIComponent(sourceId)+'&export=download&confirm=t';
 }
 const fmt=s=>{if(!Number.isFinite(s))return '0:00';const m=Math.floor(s/60),ss=Math.floor(s%60).toString().padStart(2,'0');return m+':'+ss};
@@ -1400,12 +1401,12 @@ function openPlayer(btn){
   title.textContent=btn.dataset.title||'Atrium Visual';
   stage.innerHTML='<div class="loading">Cargando video…</div>';
   const video=document.createElement('video');
-  video.playsInline=true;video.preload='metadata';video.autoplay=true;video.controls=false;
-  let currentSourceId=activeSources[qualityBtn.dataset.quality]||id;let proxyTried=false;video.src=sourceUrl(currentSourceId);
+  video.playsInline=true;video.preload='auto';video.autoplay=true;video.controls=false;
+  currentSourceId=activeSources[qualityBtn.dataset.quality]||id;proxyTried=false;video.src=sourceUrl(currentSourceId);
   video.addEventListener('loadedmetadata',()=>{const l=stage.querySelector('.loading');if(l)l.remove();sync()});
   video.addEventListener('canplay',()=>{const l=stage.querySelector('.loading');if(l)l.remove()});
   video.addEventListener('timeupdate',sync);video.addEventListener('play',sync);video.addEventListener('pause',sync);video.addEventListener('ended',sync);
-  video.addEventListener('error',()=>{if(!proxyTried&&currentSourceId!==id){proxyTried=true;video.src='/api/video?id='+encodeURIComponent(currentSourceId);video.load();video.play().catch(()=>sync());return;}stage.innerHTML='<div class="fallback">No fue posible cargar el video.<br><a href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener">Abrir en Drive ↗</a></div>'});
+  video.addEventListener('error',()=>{if(!proxyTried){proxyTried=true;video.src='/api/video?id='+encodeURIComponent(currentSourceId);video.load();video.play().catch(()=>sync());return;}stage.innerHTML='<div class="fallback">No fue posible cargar el video.<br><a href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener">Abrir en Drive ↗</a></div>'});
   stage.appendChild(video);activeVideo=video;
   modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');
   video.play().catch(()=>sync());
@@ -1439,7 +1440,13 @@ qualityMenu.addEventListener('click',e=>{
 document.addEventListener('click',e=>{
   if(!qualityWrap.contains(e.target)){qualityMenu.classList.remove('open');qualityBtn.setAttribute('aria-expanded','false')}
 });
-fullscreenBtn.addEventListener('click',()=>{if(!activeVideo)return;const target=shell;if(target.requestFullscreen){target.requestFullscreen()}else if(activeVideo.webkitEnterFullscreen){activeVideo.webkitEnterFullscreen()}});
+fullscreenBtn.addEventListener('click',()=>{
+  if(!activeVideo)return;
+  const nativeFullscreen=()=>{if(activeVideo&&activeVideo.webkitEnterFullscreen){try{activeVideo.webkitEnterFullscreen()}catch(e){}}};
+  if(shell.requestFullscreen&&document.fullscreenEnabled){
+    try{const result=shell.requestFullscreen();if(result&&typeof result.catch==='function')result.catch(nativeFullscreen)}catch(e){nativeFullscreen()}
+  }else nativeFullscreen();
+});
 document.getElementById('closePlayer').addEventListener('click',closePlayer);
 modal.addEventListener('click',e=>{if(e.target===modal)closePlayer()});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closePlayer()});
